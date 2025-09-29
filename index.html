@@ -22,10 +22,29 @@
       pointer-events: none;
       opacity: 0;
     }
+    .filters {
+      margin-bottom: 10px;
+    }
+    .filter-btn {
+      display: inline-block;
+      margin: 2px 5px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      background: #f8f8f8;
+      transition: all 0.2s ease;
+    }
+    .filter-btn.active {
+      color: white;
+    }
   </style>
 </head>
 <body>
   <h2>Ski Area Size vs. Public Boundary</h2>
+  <div class="filters" id="filters"></div>
   <svg id="chart" width="900" height="600"></svg>
   <div id="tooltip" class="tooltip"></div>
 
@@ -80,8 +99,9 @@
     const innerHeight = height - margin.top - margin.bottom;
 
     const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
     const tooltip = d3.select("#tooltip");
+
+    let allData, activeRegions;
 
     d3.csv("ski-stats.csv").then(data => {
       data.forEach(d => {
@@ -91,18 +111,36 @@
         d.region = region_map[d.state] || "Unknown";
       });
 
-      const x = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.public_boundary_area) * 1.05])
-        .range([0, innerWidth]);
+      allData = data;
+      activeRegions = Array.from(new Set(data.map(d => d.region)));
 
-      const y = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.ratio) * 1.05])
-        .range([innerHeight, 0]);
+      // Create buttons
+      const filterDiv = d3.select("#filters");
+      activeRegions.forEach(region => {
+        filterDiv.append("div")
+          .attr("class", "filter-btn active")
+          .style("background", colorMap[region])
+          .text(region)
+          .on("click", function() {
+            const btn = d3.select(this);
+            if (btn.classed("active")) {
+              btn.classed("active", false).style("background", "#f8f8f8").style("color", "black");
+              activeRegions = activeRegions.filter(r => r !== region);
+            } else {
+              btn.classed("active", true).style("background", colorMap[region]).style("color", "white");
+              activeRegions.push(region);
+            }
+            updatePlot();
+          });
+      });
 
-      // X Axis
-      g.append("g")
-        .attr("transform", `translate(0,${innerHeight})`)
-        .call(d3.axisBottom(x));
+      // Scales
+      const x = d3.scaleLinear().range([0, innerWidth]);
+      const y = d3.scaleLinear().range([innerHeight, 0]);
+
+      const xAxis = g.append("g").attr("transform", `translate(0,${innerHeight})`);
+      const yAxis = g.append("g");
+
       g.append("text")
         .attr("class", "axis-label")
         .attr("x", innerWidth / 2)
@@ -110,8 +148,6 @@
         .style("text-anchor", "middle")
         .text("Public Boundary Area");
 
-      // Y Axis
-      g.append("g").call(d3.axisLeft(y));
       g.append("text")
         .attr("class", "axis-label")
         .attr("transform", "rotate(-90)")
@@ -120,23 +156,32 @@
         .style("text-anchor", "middle")
         .text("Advertised Skiable Acres / Boundary Area");
 
-      // Horizontal line at y=1
-      g.append("line")
-        .attr("x1", 0)
-        .attr("x2", innerWidth)
-        .attr("y1", y(1))
-        .attr("y2", y(1))
+      const impossibleLine = g.append("line")
         .attr("stroke", "black")
         .attr("stroke-dasharray", "4 2");
 
-      // Scatter points
-      g.selectAll("circle")
-        .data(data)
-        .enter().append("circle")
-          .attr("cx", d => x(d.public_boundary_area))
-          .attr("cy", d => y(d.ratio))
+      function updatePlot() {
+        const filtered = allData.filter(d => activeRegions.includes(d.region));
+
+        x.domain([0, d3.max(filtered, d => d.public_boundary_area) * 1.05 || 1]);
+        y.domain([0, d3.max(filtered, d => d.ratio) * 1.05 || 1]);
+
+        xAxis.transition().duration(750).call(d3.axisBottom(x));
+        yAxis.transition().duration(750).call(d3.axisLeft(y));
+
+        impossibleLine
+          .transition().duration(750)
+          .attr("x1", 0).attr("x2", innerWidth)
+          .attr("y1", y(1)).attr("y2", y(1));
+
+        const circles = g.selectAll("circle")
+          .data(filtered, d => d.id);
+
+        circles.enter().append("circle")
           .attr("r", 5)
           .attr("fill", d => colorMap[d.region] || "gray")
+          .attr("cx", d => x(d.public_boundary_area))
+          .attr("cy", d => y(d.ratio))
           .on("mouseover", (event, d) => {
             tooltip.transition().duration(100).style("opacity", 1);
             tooltip.html(`
@@ -149,9 +194,16 @@
               .style("left", (event.pageX + 10) + "px")
               .style("top", (event.pageY - 28) + "px");
           })
-          .on("mouseout", () => {
-            tooltip.transition().duration(200).style("opacity", 0);
-          });
+          .on("mouseout", () => tooltip.transition().duration(200).style("opacity", 0))
+          .merge(circles)
+          .transition().duration(750)
+          .attr("cx", d => x(d.public_boundary_area))
+          .attr("cy", d => y(d.ratio));
+
+        circles.exit().remove();
+      }
+
+      updatePlot();
     });
   </script>
 </body>
