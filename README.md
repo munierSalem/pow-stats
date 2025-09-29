@@ -1,2 +1,2 @@
-Ski Stats
+Pow Stats
 =========
