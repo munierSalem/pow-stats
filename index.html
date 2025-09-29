@@ -117,6 +117,7 @@
       // Create buttons
       const filterDiv = d3.select("#filters");
       activeRegions.forEach(region => {
+        console.log(region)
         filterDiv.append("div")
           .attr("class", "filter-btn active")
           .style("background", colorMap[region])
@@ -161,7 +162,7 @@
         .attr("stroke-dasharray", "4 2");
 
       function updatePlot() {
-        const filtered = allData.filter(d => activeRegions.includes(d.region));
+        const filtered = allData.filter(d => (activeRegions.includes(d.region) && d.ratio > 0));
 
         x.domain([0, d3.max(filtered, d => d.public_boundary_area) * 1.05 || 1]);
         y.domain([0, d3.max(filtered, d => d.ratio) * 1.05 || 1]);
@@ -175,7 +176,7 @@
           .attr("y1", y(1)).attr("y2", y(1));
 
         const circles = g.selectAll("circle")
-          .data(filtered, d => d.id);
+          .data(filtered, d => d.slug);
 
         circles.enter().append("circle")
           .attr("r", 5)
