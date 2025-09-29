@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ski Area Stats Scatterplot</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+    }
+    .axis-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+      border: 1px solid #aaa;
+      padding: 8px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ski Area Size vs. Public Boundary</h2>
+  <svg id="chart" width="900" height="600"></svg>
+  <div id="tooltip" class="tooltip"></div>
+
+  <script>
+    // Region map
+    const region_map = {
+      'Colorado': 'Rockies',
+      'British Columbia': 'Western Canada',
+      'California': 'Pacific',
+      'Montana': 'Rockies',
+      'Idaho': 'Rockies',
+      'Utah': 'Rockies',
+      'Vermont': 'Northeast',
+      'Washington': 'Pacific',
+      'Oregon': 'Pacific',
+      'Wyoming': 'Rockies',
+      'New York': 'Northeast',
+      'Maine': 'Northeast',
+      'Alberta': 'Western Canada',
+      'New Mexico': 'Rockies',
+      'New Hampshire': 'Northeast',
+      'Quebec': 'Eastern Canada',
+      'Alaska': 'Pacific',
+      'Michigan': 'Midwest',
+      'Nevada': 'Pacific',
+      'Arizona': 'Rockies',
+      'Minnesota': 'Midwest',
+      'South Dakota': 'Midwest',
+      'Newfoundland and Labrador': 'Eastern Canada',
+      'Pennsylvania': 'Northeast',
+      'Wisconsin': 'Midwest',
+      'Ontario': 'Eastern Canada',
+      'West Virginia': 'Northeast',
+      'Illinois': 'Midwest'
+    };
+
+    // Color map
+    const colorMap = {
+      'Eastern Canada': "#FF6F00",
+      'Midwest': "#00A2FF",
+      'Northeast': "#00C853",
+      'Pacific': "#FFD600",
+      'Rockies': "#AA00FF",
+      'Western Canada': "#D50000"
+    };
+
+    const svg = d3.select("#chart");
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+    const margin = { top: 40, right: 40, bottom: 60, left: 80 };
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const tooltip = d3.select("#tooltip");
+
+    d3.csv("ski-stats.csv").then(data => {
+      data.forEach(d => {
+        d.public_boundary_area = +d.public_boundary_area;
+        d.advertised_acres = +d.advertised_acres;
+        d.ratio = d.public_boundary_area > 0 ? d.advertised_acres / d.public_boundary_area : 0;
+        d.region = region_map[d.state] || "Unknown";
+      });
+
+      const x = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.public_boundary_area) * 1.05])
+        .range([0, innerWidth]);
+
+      const y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.ratio) * 1.05])
+        .range([innerHeight, 0]);
+
+      // X Axis
+      g.append("g")
+        .attr("transform", `translate(0,${innerHeight})`)
+        .call(d3.axisBottom(x));
+      g.append("text")
+        .attr("class", "axis-label")
+        .attr("x", innerWidth / 2)
+        .attr("y", innerHeight + 45)
+        .style("text-anchor", "middle")
+        .text("Public Boundary Area");
+
+      // Y Axis
+      g.append("g").call(d3.axisLeft(y));
+      g.append("text")
+        .attr("class", "axis-label")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -innerHeight / 2)
+        .attr("y", -55)
+        .style("text-anchor", "middle")
+        .text("Advertised Skiable Acres / Boundary Area");
+
+      // Horizontal line at y=1
+      g.append("line")
+        .attr("x1", 0)
+        .attr("x2", innerWidth)
+        .attr("y1", y(1))
+        .attr("y2", y(1))
+        .attr("stroke", "black")
+        .attr("stroke-dasharray", "4 2");
+
+      // Scatter points
+      g.selectAll("circle")
+        .data(data)
+        .enter().append("circle")
+          .attr("cx", d => x(d.public_boundary_area))
+          .attr("cy", d => y(d.ratio))
+          .attr("r", 5)
+          .attr("fill", d => colorMap[d.region] || "gray")
+          .on("mouseover", (event, d) => {
+            tooltip.transition().duration(100).style("opacity", 1);
+            tooltip.html(`
+              <strong>${d.resort_name}</strong><br/>
+              ${d.state}, ${d.region}<br/>
+              Boundary Area: ${d.public_boundary_area}<br/>
+              Advertised Acres: ${d.advertised_acres}<br/>
+              Ratio: ${d.ratio.toFixed(2)}
+            `)
+              .style("left", (event.pageX + 10) + "px")
+              .style("top", (event.pageY - 28) + "px");
+          })
+          .on("mouseout", () => {
+            tooltip.transition().duration(200).style("opacity", 0);
+          });
+    });
+  </script>
+</body>
+</html>
