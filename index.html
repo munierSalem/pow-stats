@@ -103,7 +103,7 @@
 
     let allData, activeRegions;
 
-    d3.csv("ski-stats.csv").then(data => {
+    d3.csv("data/ski-stats.csv").then(data => {
       data.forEach(d => {
         d.public_boundary_area = +d.public_boundary_area;
         d.advertised_acres = +d.advertised_acres;
