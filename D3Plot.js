@@ -178,7 +178,11 @@ export class D3Plot {
 
     this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
     this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
+    this._updateAxes();
+    this.plotLogic(filteredData);
+  }
 
+  _updateAxes() {
     if (this.xAxisArgs.show) {
       let axisX = d3.axisBottom(this.x).ticks(this.xAxisArgs.ticks);
       if (this.xAxisArgs.tickFormat) axisX.tickFormat(this.xAxisArgs.tickFormat);
@@ -194,8 +198,6 @@ export class D3Plot {
       this.yAxis.transition().duration(750).call(axisY);
       this.yAxis.select(".domain").remove();
     }
-
-    this.plotLogic(filteredData);
   }
 
   // abstract
