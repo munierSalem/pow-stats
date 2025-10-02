@@ -79,8 +79,11 @@ export class D3Plot {
   }
 
   _initSvgAndGroups() {
-    const container = d3.select(`#${this.containerId}`);
+    const container = d3.select(`#${this.containerId}`)
+      .classed("d3-plot-container", true);
+
     this.svg = container.append("svg")
+      .attr("class", "d3-plot")
       .attr("width", this.width)
       .attr("height", this.height);
 
@@ -133,18 +136,13 @@ export class D3Plot {
     let filterDiv = container.select(".filters");
     if (filterDiv.empty()) {
       filterDiv = container.append("div")
-        .attr("class", "filters")
-        .style("margin-bottom", "10px")
-        .style("display", "flex")
-        .style("gap", "6px")
-        .style("flex-wrap", "wrap");
+        .attr("class", "filters");
     }
 
     this.activeGroups.forEach(group => {
       filterDiv.append("div")
         .attr("class", "filter-btn active")
         .style("--btn-color", this.colorMap[group])
-        .style("border-color", this.colorMap[group])
         .text(group)
         .on("click", (event) => {
           const btn = d3.select(event.currentTarget);
