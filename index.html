@@ -35,14 +35,14 @@
     .filters {
       margin-bottom: 10px;
     }
+    
     .filter-btn {
       display: inline-block;
       color: var(--btn-color);
       margin: 2px 5px;
       padding: 4px 8px;
+      border: 2px solid var(--btn-color);
       border-radius: 4px;
-      border-width: 2px;
-      border-style: solid;
       cursor: pointer;
       font-size: 12px;
       font-weight: bold;
@@ -51,12 +51,14 @@
     }
 
     .filter-btn:hover {
+      background-color: var(--btn-color);   /* fallback for old browsers */
       background: color-mix(in srgb, var(--btn-color) 70%, transparent);
       color: white;
       cursor: pointer;
     }
 
     .filter-btn.active {
+      background-color: var(--btn-color);   /* fallback for old browsers */
       background-color: color-mix(in srgb, var(--btn-color) 70%, transparent);
       color: white;
     }
