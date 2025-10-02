@@ -143,23 +143,16 @@ export class D3Plot {
     this.activeGroups.forEach(group => {
       filterDiv.append("div")
         .attr("class", "filter-btn active")
-        .style("background", this.colorMap[group])
-        .style("color", "white")
-        .style("padding", "4px 8px")
-        .style("cursor", "pointer")
-        .style("border-radius", "4px")
+        .style("--btn-color", this.colorMap[group])
+        .style("border-color", this.colorMap[group])
         .text(group)
         .on("click", (event) => {
           const btn = d3.select(event.currentTarget);
           if (btn.classed("active")) {
-            btn.classed("active", false)
-              .style("background", "#f8f8f8")
-              .style("color", "black");
+            btn.classed("active", false).classed("inactive", true);
             this.activeGroups = this.activeGroups.filter(g => g !== group);
           } else {
-            btn.classed("active", true)
-              .style("background", this.colorMap[group])
-              .style("color", "white");
+            btn.classed("active", true).classed("inactive", false);
             this.activeGroups.push(group);
           }
           this.updatePlot();
