@@ -1,198 +1,198 @@
-slug,resort_name,state,base_elevation,base_public_lift_elevation,peak_public_lift_elevation,peak_elevation,max_lift_served_run_vert,advertised_acres,skiable_acres,public_skiable_acres,public_lift_served_skiable_acres,public_boundary_area
-powder-mountain,Powder Mountain,Utah,6628,6900,9003,9400,2103,8464,8464,4000,2200,4000
-whistler-blackcomb,Whistler Blackcomb,British Columbia,2140,2140,7494,7494,5247,8171,8171,8171,7701,8550
-park-city,Park City,Utah,6900,6900,9998,10026,2722,7300,7300,7300,6645,7500
-big-sky,Big Sky,Montana,6800,6800,11172,11172,4032,5850,5850,5850,5800,6500
-vail,Vail,Colorado,8120,8120,11570,11570,3130,5317,5317,5317,5252,8000
-deer-valley,Deer Valley,Utah,6500,6500,9570,9570,2585,,4900,4900,4900,4900
-sun-peaks,Sun Peaks,British Columbia,3930,3930,6850,6865,2920,4300,4270,4270,4270,4675
-mt-bachelor,Mount Bachelor,Oregon,5700,5700,8956,9071,3256,4300,4000,4000,3935,4000
-palisades-tahoe,Palisades Tahoe,California,6220,6200,8738,9006,2254,6000,3725,3725,3177,3725
-lake-louise,Lake Louise,Alberta,5417,5417,8650,8650,3233,4200,3600,3600,3320,3600
-snowmass,Snowmass,Colorado,8120,8120,12550,12550,4430,3342,3342,3342,3342,5450
-steamboat,Steamboat,Colorado,6893,6893,10537,10574,3644,3741,3300,3300,2985,3300
-silver-star,Silver Star,British Columbia,3740,3740,6194,6194,2454,3269,3269,3269,3019,3500
-keystone,Keystone,Colorado,9280,9280,12282,12616,2361,3149,3149,3149,2519,4100
-revelstoke,Revelstoke,British Columbia,1680,1680,7300,7713,5620,3121,3121,3121,3041,3121
-winter-park,Winter Park,Colorado,9090,9090,11986,12060,2896,3081,3081,3081,2651,4000
-panorama,Panorama,British Columbia,3780,3780,7760,8038,3980,2975,2975,2975,2595,2975
-breckenridge,Breckenridge,Colorado,9570,9570,12840,13004,3270,2908,2908,2908,2578,4000
-northstar,Northstar,California,6300,6300,8610,8610,2310,2904,2904,2904,2904,2904
-mammoth-mountain,Mammoth Mountain,California,8058,8058,11058,11058,3000,3500,2875,2875,2875,2875
-red-mountain,Red Mountain,British Columbia,3812,3812,6720,6772,2908,3850,2800,2800,2375,2800
-big-white,Big White,British Columbia,4960,4960,7456,7456,2496,2800,2800,2800,2800,2800
-heavenly,Heavenly,California,6650,6650,9960,10064,2710,4800,2600,2600,2488,2600
-crystal-mountain,Crystal Mountain,Washington,4185,4383,6985,7012,2602,2600,2600,2600,1820,2600
-sun-valley-bald-mountain,Sun Valley -- Bald Mountain,Idaho,5760,5760,9117,9117,3357,2563,2563,2563,2563,2563
-copper-mountain,Copper Mountain,Colorado,9712,9712,12340,12495,2603,2538,2538,2538,2428,3488
-snowbird,Snowbird,Utah,7760,7760,10962,11490,3202,2500,2500,2500,2050,2500
-castle-mountain,Castle Mountain,Alberta,4635,4635,7395,7845,2760,3590,2350,2350,2000,2350
-whitefish,Whitefish,Montana,4470,4470,6767,6767,2297,3000,2300,2300,2300,2300
-snowbasin,Snowbasin,Utah,6400,6400,9364,9370,2964,3000,2175,2175,2085,2175
-jackson-hole,Jackson Hole,Wyoming,6311,6311,10449,10449,4138,2500,2170,2170,2030,2170
-schweitzer,Schweitzer,Idaho,4000,4000,6380,6380,2380,2900,2160,2160,2160,2160
-mount-hood-meadows,Mount Hood Meadows,Oregon,4520,4530,7320,9000,2790,2150,2150,2150,1472,2560
-banff-sunshine,Banff Sunshine,Alberta,5450,5450,8820,9175,3370,3300,2125,2125,1752,2125
-beaver-creek,Beaver Creek,Colorado,7400,7400,11440,11440,3490,2082,2082,2082,2062,5175
-fernie,Fernie,British Columbia,3475,3475,6900,6900,3425,2500,2075,2075,2075,2075
-telluride,Telluride,Colorado,8725,8725,12515,13150,3790,2000,2000,2000,1750,4140
-silverton,Silverton,Colorado,10210,10310,12070,13494,1760,1819,1819,1819,425,1819
-bogus-basin,Bogus Basin,Idaho,5770,5770,7570,7570,1800,2600,1775,1775,1775,1775
-alta,Alta,Utah,8540,8540,10550,11070,2010,2614,1675,1675,1625,1675
-bridger-bowl,Bridger Bowl,Montana,6115,6115,8696,8800,2581,2000,1675,1675,1375,1675
-loveland-basin,Loveland Basin,Colorado,10880,10880,12692,13004,1812,1675,1675,1675,1275,1675
-kirkwood,Kirkwood,California,7810,7810,9460,9800,1650,2300,1650,1650,1330,1650
-grand-targhee,Grand Targhee,Wyoming,7500,7600,9860,9945,2260,2600,1600,1600,1560,1600
-purgatory,Purgatory,Colorado,8793,8793,10822,10822,2029,1600,1600,1600,1600,1600
-kicking-horse,Kicking Horse,British Columbia,4140,4140,7928,8218,3788,3400,1575,1575,1339,1575
-discovery,Discovery,Montana,5720,5720,8158,8158,2438,2200,1560,1560,1560,1560
-crested-butte,Crested Butte,Colorado,9130,9130,11880,12166,2750,1547,1547,1547,1412,2225
-tamarack,Tamarack,Idaho,4940,4940,7640,7640,2700,1530,1530,1530,1530,1530
-killington,Killington,Vermont,1160,1160,4150,4229,2990,1509,1509,1509,1500,2880
-timberline-lodge,Timberline Lodge,Oregon,3985,4840,8500,8500,3660,1685,1500,1500,1210,1500
-whitewater,Whitewater,British Columbia,4545,4545,6750,7580,2005,1367,1500,1500,1367,1500
-sierraattahoe,Sierra-at-Tahoe,California,6640,6640,8850,8850,1590,2000,1450,1450,1450,1450
-kimberley,Kimberley,British Columbia,4055,4055,6240,6240,2185,1800,1450,1450,1450,1450
-arapahoe-basin,Arapahoe Basin,Colorado,10360,10785,12467,13050,1682,1428,1428,1428,1088,1428
-wolf-creek,Wolf Creek,Colorado,10260,10260,11740,11879,1480,1600,1425,1425,1200,1425
-alyeska,Alyeska,Alaska,280,280,2750,3940,2470,1610,1400,1400,1000,1400
-sugarloaf,Sugarloaf,Maine,1393,1393,4163,4238,2770,1360,1360,1360,860,2500
-49-degrees-north,49 Degrees North,Washington,3910,3910,5776,5776,1866,2325,1350,1350,1350,1350
-bear-valley,Bear Valley,California,6620,6620,8488,8488,1868,1680,1300,1300,700,1300
-taos,Taos,New Mexico,9350,9350,12450,12488,3100,1294,1294,1294,1025,1294
-mount-spokane,Mount Spokane,Washington,3850,3850,5885,5885,2035,1704,1225,1225,1225,1225
-lost-trail,Lost Trail,Montana,6425,6425,8180,8180,1755,1800,1200,1200,1200,1200
-solitude,Solitude,Utah,8000,8000,10015,10489,2015,1200,1200,1200,1070,1330
-sunrise-park,Sunrise Park,Arizona,9355,9355,10900,10932,1545,1200,1200,1200,1200,1350
-white-pass,White Pass,Washington,4480,4480,6520,6520,2040,1402,1175,1175,1175,1175
-brundage-mountain,Brundage Mountain,Idaho,5965,5965,7600,7661,1635,1920,1150,1150,1130,1150
-soldier-mountain,Soldier Mountain,Idaho,5780,5780,7177,7177,1397,1150,1150,1150,950,1150
-stevens-pass,Stevens Pass,Washington,3825,3825,5680,5855,1765,1125,1125,1125,1045,1125
-smugglers-notch,Smugglers' Notch,Vermont,1110,1110,3650,3650,2540,1060,1060,1060,1060,1216
-june,June,California,7560,7560,10130,10130,2570,1500,1060,1060,1060,1060
-silver-mountain,Silver Mountain,Idaho,4160,4160,6245,6297,2085,1600,1050,1050,1020,1050
-sugar-bowl,Sugar Bowl,California,6910,6910,8365,8381,1415,1650,1050,1050,900,1050
-the-summit-at-snoqualmie,The Summit at Snoqualmie,Washington,2620,2620,3865,3865,1245,1089,1025,1025,1025,1025
-mount-washington,Mount Washington,British Columbia,3550,3550,5150,5200,1600,1700,1025,1025,960,1025
-marmot-basin,Marmot Basin,Alberta,5640,5640,8180,8556,2540,1720,1025,1025,855,1025
-homewood,Homewood,California,6230,6230,7880,7880,1650,1260,1025,1025,955,1025
-aspen-highlands,Aspen Highlands,Colorado,8090,8090,11580,12387,3490,1024,1024,1024,784,1225
-mission-ridge,Mission Ridge,Washington,4585,4585,6770,6770,2185,2000,1000,1000,820,1000
-red-lodge,Red Lodge,Montana,7080,7080,9390,9390,2310,1635,1000,1000,1000,1000
-powderhorn,Powderhorn,Colorado,8170,8170,9830,9830,1660,1600,1000,1000,1000,1000
-great-divide,Great Divide,Montana,5800,5800,7190,7334,1390,1500,975,975,945,975
-apex,Apex,British Columbia,5250,5250,7142,7142,1892,1112,965,965,965,965
-montana-snowbowl,Montana Snowbowl,Montana,5000,5000,7530,7530,2530,950,950,950,950,1840
-monarch,Monarch,Colorado,10695,10695,11800,11940,1105,1146,940,940,810,940
-powder-king,Powder King,British Columbia,3125,3125,5010,5010,1885,925,925,925,925,1075
-brighton,Brighton,Utah,8750,8750,10460,10721,2305,1050,890,890,858,890
-sunday-river,Sunday River,Maine,815,815,3130,3130,2315,870,870,870,870,2300
-dodge-ridge,Dodge Ridge,California,6570,6570,8150,8150,1580,862,862,862,862,890
-aspen-mountain,Aspen Mountain,Colorado,7950,7950,11260,11260,3310,860,860,860,860,1070
-mount-rose,Mount Rose,Nevada,7940,7940,9565,9565,1625,1200,800,800,800,800
-nakiska,Nakiska,Alberta,4915,4915,7415,7415,2505,1021,790,790,790,790
-mt-baker,Mount Baker,Washington,3630,3630,5090,5090,1460,1000,770,770,770,770
-mont-tremblant,Mont Tremblant,Quebec,755,755,2863,2878,2108,753,753,753,753,2650
-ski-apache,Ski Apache,New Mexico,9656,9656,11400,11573,1744,750,750,750,750,750
-lookout-pass,Lookout Pass,Idaho,4508,4508,6160,6160,1652,1023,740,740,740,740
-sunlight,Sunlight,Colorado,7890,8125,9893,9893,1768,730,730,730,690,775
-stratton,Stratton,Vermont,1990,1990,3880,3880,1890,670,670,670,670,1375
-beaver-mountain,Beaver Mountain,Utah,7150,7150,8760,8760,1610,667,667,667,667,850
-okemo,Okemo,Vermont,1155,1155,3320,3320,2165,667,667,667,667,1780
-china-peak,China Peak,California,7030,7030,8630,8630,1600,1400,660,660,660,660
-brian-head,Brian Head,Utah,9600,9600,10905,10905,1145,650,650,650,650,740
-eaglecrest,Eaglecrest,Alaska,1135,1135,2595,2940,1415,640,640,640,420,690
-mount-shasta,Mount Shasta,California,5465,5465,7550,7550,2085,635,635,635,635,670
-arizona-snowbowl,Arizona Snowbowl,Arizona,9140,9140,11510,12000,2370,777,620,620,560,620
-eagle-point,Eagle Point,Utah,9180,9325,10570,10570,1245,600,620,620,600,620
-eldora,Eldora,Colorado,9250,9250,10600,10600,1350,680,615,615,615,615
-blacktail-mountain,Blacktail Mountain,Montana,5240,5240,6660,6660,1420,1000,600,600,600,600
-saddleback,Saddleback,Maine,2140,2140,4000,4000,1860,600,600,600,600,800
-cypress-mountain,Cypress Mountain,British Columbia,2685,2685,4670,4670,1655,600,600,600,600,600
-mount-snow,Mount Snow,Vermont,1930,1930,3590,3590,1660,600,600,600,600,1200
-mount-baldy,Mount Baldy,British Columbia,5650,5650,6950,6950,1300,600,600,600,600,700
-sugarbush,Sugarbush,Vermont,1500,1500,4060,4060,2560,581,581,581,581,2350
-ski-santa-fe,Ski Santa Fe,New Mexico,10340,10340,12090,12090,1750,660,580,580,490,580
-angel-fire,Angel Fire,New Mexico,8585,8585,10680,10794,2095,560,560,560,500,1280
-willamette-pass,Willamette Pass,Oregon,5115,5115,6684,6684,1569,555,555,555,555,555
-lutsen-mountains,Lutsen Mountains,Minnesota,900,900,1675,1675,775,1000,550,550,550,550
-mont-sainte-anne,Mont Sainte Anne,Quebec,585,585,2642,2642,2057,547,547,547,547,1470
-sundance,Sundance,Utah,6100,6100,8240,8240,2140,540,540,540,540,640
-ski-bluewood,Ski Bluewood,Washington,4545,4545,5670,5670,1125,530,530,530,430,530
-mount-hood-skibowl,Mount Hood Skibowl,Oregon,3665,3665,5020,5070,1355,960,520,520,517,520
-showdown,Showdown,Montana,6870,6870,8180,8180,1310,,500,500,500,500
-stowe,Stowe,Vermont,1260,1300,3660,3660,2315,485,485,485,485,1475
-jay-peak,Jay Peak,Vermont,1840,1840,3830,3858,1990,485,485,485,485,960
-ski-cooper,Ski Cooper,Colorado,10595,10595,11740,11740,1145,480,480,480,480,520
-turner-mountain,Turner Mountain,Montana,3862,3862,5956,5956,2094,,470,470,470,470
-buttermilk,Buttermilk,Colorado,7875,7875,9875,9875,2000,470,470,470,470,880
-pico,Pico,Vermont,2000,2000,3930,3930,1930,468,468,468,468,575
-bretton-woods,Bretton Woods,New Hampshire,1600,1600,2990,2990,1390,464,464,464,464,780
-ski-bromont,Ski Bromont,Quebec,595,595,1802,1802,1207,450,450,450,450,960
-mount-abram,Mount Abram,Maine,935,945,1990,1990,1045,450,430,430,390,430
-gore,Gore,New York,1055,1055,3555,3555,2500,428,428,428,428,1850
-black-mountain,Black Mountain,Maine,970,970,2018,2274,1048,600,425,425,255,425
-pebble-creek,Pebble Creek,Idaho,6380,6380,8510,8510,2130,1100,415,415,415,415
-boyne,Boyne,Michigan,,,1157,"1,157",,415,415,415,415,415
-mount-baldy-ski-lifts,Mount Baldy Ski Lifts,California,6475,6475,8560,"8,560",2080,600,410,410,410,410
-kelly-canyon,Kelly Canyon,Idaho,5810,5810,6680,"6,805",870,640,410,410,410,410
-le-massif,Le Massif,Quebec,135,135,2600,"2,600",2465,406,406,406,406,1240
-granby-ranch,Granby Ranch,Colorado,8330,8330,9170,"9,170",840,406,406,406,406,450
-loon,Loon,New Hampshire,855,855,3045,"3,045",2075,403,403,403,403,1100
-hoodoo,Hoodoo,Oregon,4682,4682,5708,"5,708",1026,800,400,400,400,400
-diamond-peak,Diamond Peak,Nevada,6730,6730,8525,"8,540",1795,655,400,400,390,400
-mount-bohemia,Mount Bohemia,Michigan,650,650,1465,"1,465",815,585,400,400,400,400
-ski-land,Ski Land,Alaska,1370,1400,2461,"2,461",1061,,400,400,395,400
-maverick-mountain,Maverick Mountain,Montana,6845,6970,8430,"8,430",1460,,400,400,400,400
-pomerelle,Pomerelle,Idaho,7715,7715,8655,"8,655",940,,390,390,390,390
-the-highlands,The Highlands,Michigan,780,780,1313,"1,313",525,435,385,385,385,385
-titus,Titus,New York,1050,1050,2000,"2,000",950,380,380,380,380,450
-alpental,Alpental,Washington,3145,3145,5440,"5,522",2295,825,375,375,375,375
-pine-creek,Pine Creek,Wyoming,6865,6865,8220,"8,220",1355,370,370,370,370,400
-snow-king,Snow King,Wyoming,6235,6235,7925,"8,005",1690,500,365,365,365,365
-red-river,Red River,New Mexico,8645,8645,10274,"10,274",1629,,365,365,365,365
-blue-mountain,Blue Mountain,Ontario,758,758,1475,"1,475",707,364,364,364,364,690
-terry-peak,Terry Peak,South Dakota,5920,5920,6990,"6,990",1070,450,350,350,350,350
-kissing-bridge,Kissing Bridge,New York,1230,1230,1770,"1,770",530,700,335,335,335,335
-whiteface-mountain,Whiteface Mountain,New York,1220,1220,4386,"4,650",3166,334,334,334,299,1015
-arctic-valley,Arctic Valley,Alaska,2526,2526,3930,"4,068",1404,320,320,320,320,375
-hunter,Hunter,New York,1640,1640,3200,"3,200",1560,320,320,320,320,660
-attitash,Attitash,New Hampshire,620,620,2285,"2,285",1665,311,311,311,311,790
-harper-mountain,Harper Mountain,British Columbia,3530,3530,4830,"4,830",1300,400,300,300,300,300
-boreal,Boreal,California,7169,7169,7696,"7,696",527,380,300,300,300,300
-bolton-valley,Bolton Valley,Vermont,1558,1558,3115,"3,115",1557,300,300,300,300,550
-greek-peak,Greek Peak,New York,1260,1260,2089,"2,089",800,300,300,300,300,460
-sandia-peak,Sandia Peak,New Mexico,8680,8680,10285,"10,285",1605,300,300,300,300,410
-donner-ski-ranch,Donner Ski Ranch,California,7040,7040,7761,"7,761",721,500,290,290,290,290
-holiday-valley,Holiday Valley,New York,1530,1530,2320,"2,320",726,290,290,290,290,615
-granite-peak,Granite Peak,Wisconsin,1217,1217,1880,"1,880",663,400,290,290,290,290
-cannon,Cannon,New Hampshire,1835,1873,4030,"4,030",2157,287,287,287,287,860
-seven-springs,Seven Springs,Pennsylvania,2260,2260,2995,"2,995",735,285,285,285,285,440
-windham,Windham,New York,1710,1710,3050,"3,050",1340,285,285,285,285,600
-pajarito,Pajarito,New Mexico,8975,8975,10430,"10,450",1370,280,280,280,280,600
-snowshoe,Snowshoe,West Virginia,3260,3260,4785,"4,785",1455,270,270,270,270,550
-waterville-valley,Waterville Valley,New Hampshire,1834,1834,3850,"3,850",2016,265,265,265,265,490
-sun-valley--dollar-mountain,Sun Valley -- Dollar Mountain,Idaho,5950,5950,6570,"6,570",620,260,260,260,260,260
-loup-loup-ski-bowl,Loup Loup Ski Bowl,Washington,4080,4080,5300,"5,300",1220,300,260,260,260,260
-shames,Shames,British Columbia,2328,2328,3793,"3,793",1465,252,252,252,252,365
-anthony-lakes,Anthony Lakes,Oregon,7130,7130,7930,"7,930",800,1000,250,250,250,250
-white-pine,White Pine,Wyoming,8438,8438,9334,"9,334",896,370,250,250,250,250
-snowriver--jackson-creek,Snowriver -- Jackson Creek,Michigan,1207,1207,1745,"1,745",538,250,250,250,250,250
-snowy-range,Snowy Range,Wyoming,8770,8770,9642,"9,642",872,250,250,250,250,330
-ragged-mountain,Ragged Mountain,New Hampshire,1125,1125,2208,"2,208",1083,250,250,250,250,500
-labrador,Labrador,New York,1184,1184,1857,"1,857",673,,250,250,250,250
-porcupine-mountains,Porcupine Mountains,Michigan,732,732,1364,"1,364",632,250,250,250,250,250
-nubs-nob,Nub's Nob,Michigan,920,920,1328,"1,328",408,248,248,248,248,248
-pleasant-mountain,Pleasant Mountain,Maine,515,515,1763,"1,763",1248,,245,245,245,260
-big-bear-snow-summit,Big Bear -- Snow Summit,California,6970,6970,8180,"8,180",1210,240,240,240,240,430
-whitecap-mountains,Whitecap Mountains,Wisconsin,1450,1450,1780,"1,780",330,400,240,240,240,240
-sunapee,Sunapee,New Hampshire,1260,1260,2720,"2,720",1460,233,233,233,233,715
-marble-mountain,Marble Mountain,Newfoundland and Labrador,52,52,1532,"1,532",1480,230,230,230,230,500
-gunstock,Gunstock,New Hampshire,930,930,2240,"2,240",1310,227,227,227,227,475
-big-powderhorn,Big Powderhorn,Michigan,1214,1214,1634,"1,634",420,253,226,226,226,226
-wildcat,Wildcat,New Hampshire,1930,1930,3970,"3,970",2040,225,225,225,225,550
-grouse-mountain,Grouse Mountain,British Columbia,2840,2840,3950,"3,950",1110,212,212,212,212,260
-mount-ashland,Mount Ashland,Oregon,6316,6316,7470,"7,470",1154,223,210,210,210,210
-sasquatch,Sasquatch,British Columbia,3196,3196,4303,"4,303",1107,205,205,205,205,390
-magic-mountain,Magic Mountain,Vermont,1370,1370,2850,"2,850",1480,205,205,205,205,420
-mount-seymour,Mount Seymour,British Columbia,3265,3330,4100,"4,100",770,200,200,200,200,200
+,slug,resort_name,state,base_elevation,base_public_lift_elevation,peak_public_lift_elevation,peak_elevation,max_lift_served_run_vert,advertised_acres,skiable_acres,public_skiable_acres,public_lift_served_skiable_acres,public_boundary_area,region
+0,powder-mountain,Powder Mountain,Utah,6628.0,6900.0,9003,9400,2103.0,8464.0,8464,4000,2200,4000,Rockies
+1,whistler-blackcomb,Whistler Blackcomb,British Columbia,2140.0,2140.0,7494,7494,5247.0,8171.0,8171,8171,7701,8550,Western Canada
+2,park-city,Park City,Utah,6900.0,6900.0,9998,10026,2722.0,7300.0,7300,7300,6645,7500,Rockies
+3,big-sky,Big Sky,Montana,6800.0,6800.0,11172,11172,4032.0,5850.0,5850,5850,5800,6500,Rockies
+4,vail,Vail,Colorado,8120.0,8120.0,11570,11570,3130.0,5317.0,5317,5317,5252,8000,Rockies
+5,deer-valley,Deer Valley,Utah,6500.0,6500.0,9570,9570,2585.0,,4900,4900,4900,4900,Rockies
+6,sun-peaks,Sun Peaks,British Columbia,3930.0,3930.0,6850,6865,2920.0,4300.0,4270,4270,4270,4675,Western Canada
+7,mount-bachelor,Mount Bachelor,Oregon,5700.0,5700.0,8956,9071,3256.0,4300.0,4000,4000,3935,4000,Pacific
+8,palisades-tahoe,Palisades Tahoe,California,6220.0,6200.0,8738,9006,2254.0,6000.0,3725,3725,3177,3725,Pacific
+9,lake-louise,Lake Louise,Alberta,5417.0,5417.0,8650,8650,3233.0,4200.0,3600,3600,3320,3600,Western Canada
+10,snowmass,Snowmass,Colorado,8120.0,8120.0,12550,12550,4430.0,3342.0,3342,3342,3342,5450,Rockies
+11,steamboat,Steamboat,Colorado,6893.0,6893.0,10537,10574,3644.0,3741.0,3300,3300,2985,3300,Rockies
+12,silver-star,Silver Star,British Columbia,3740.0,3740.0,6194,6194,2454.0,3269.0,3269,3269,3019,3500,Western Canada
+13,keystone,Keystone,Colorado,9280.0,9280.0,12282,12616,2361.0,3149.0,3149,3149,2519,4100,Rockies
+14,revelstoke,Revelstoke,British Columbia,1680.0,1680.0,7300,7713,5620.0,3121.0,3121,3121,3041,3121,Western Canada
+15,winter-park,Winter Park,Colorado,9090.0,9090.0,11986,12060,2896.0,3081.0,3081,3081,2651,4000,Rockies
+16,panorama,Panorama,British Columbia,3780.0,3780.0,7760,8038,3980.0,2975.0,2975,2975,2595,2975,Western Canada
+17,breckenridge,Breckenridge,Colorado,9570.0,9570.0,12840,13004,3270.0,2908.0,2908,2908,2578,4000,Rockies
+18,northstar,Northstar,California,6300.0,6300.0,8610,8610,2310.0,3170.0,2904,2904,2904,2904,Pacific
+19,mammoth-mountain,Mammoth Mountain,California,8058.0,8058.0,11058,11058,3000.0,3500.0,2875,2875,2875,2875,Pacific
+20,red-mountain,Red Mountain,British Columbia,3812.0,3812.0,6720,6772,2908.0,3850.0,2800,2800,2375,2800,Western Canada
+21,big-white,Big White,British Columbia,4960.0,4960.0,7456,7456,2496.0,2800.0,2800,2800,2800,2800,Western Canada
+22,heavenly,Heavenly,California,6650.0,6650.0,9960,10064,2710.0,4800.0,2600,2600,2488,2600,Pacific
+23,crystal-mountain,Crystal Mountain,Washington,4185.0,4383.0,6985,7012,2602.0,2600.0,2600,2600,1820,2600,Pacific
+24,sun-valley-bald-mountain,Sun Valley -- Bald Mountain,Idaho,5760.0,5760.0,9117,9117,3357.0,2563.0,2563,2563,2563,2563,Rockies
+25,copper-mountain,Copper Mountain,Colorado,9712.0,9712.0,12340,12495,2603.0,2538.0,2538,2538,2428,3488,Rockies
+26,snowbird,Snowbird,Utah,7760.0,7760.0,10962,11490,3202.0,2500.0,2500,2500,2050,2500,Rockies
+27,castle-mountain,Castle Mountain,Alberta,4635.0,4635.0,7395,7845,2760.0,3590.0,2350,2350,2000,2350,Western Canada
+28,whitefish,Whitefish,Montana,4470.0,4470.0,6767,6767,2297.0,3000.0,2300,2300,2300,2300,Rockies
+29,snowbasin,Snowbasin,Utah,6400.0,6400.0,9364,9370,2964.0,3000.0,2175,2175,2085,2175,Rockies
+30,jackson-hole,Jackson Hole,Wyoming,6311.0,6311.0,10449,10449,4138.0,2500.0,2170,2170,2030,2170,Rockies
+31,schweitzer,Schweitzer,Idaho,4000.0,4000.0,6380,6380,2380.0,2900.0,2160,2160,2160,2160,Rockies
+32,mount-hood-meadows,Mount Hood Meadows,Oregon,4520.0,4530.0,7320,9000,2790.0,2150.0,2150,2150,1472,2560,Pacific
+33,banff-sunshine,Banff Sunshine,Alberta,5450.0,5450.0,8820,9175,3370.0,3300.0,2125,2125,1752,2125,Western Canada
+34,beaver-creek,Beaver Creek,Colorado,7400.0,7400.0,11440,11440,3490.0,2082.0,2082,2082,2062,5175,Rockies
+35,fernie,Fernie,British Columbia,3475.0,3475.0,6900,6900,3425.0,2500.0,2075,2075,2075,2075,Western Canada
+36,telluride,Telluride,Colorado,8725.0,8725.0,12515,13150,3790.0,2000.0,2000,2000,1750,4140,Rockies
+37,silverton,Silverton,Colorado,10210.0,10310.0,12070,13494,1760.0,1819.0,1819,1819,425,1819,Rockies
+38,bogus-basin,Bogus Basin,Idaho,5770.0,5770.0,7570,7570,1800.0,2600.0,1775,1775,1775,1775,Rockies
+39,alta,Alta,Utah,8540.0,8540.0,10550,11070,2010.0,2614.0,1675,1675,1625,1675,Rockies
+40,bridger-bowl,Bridger Bowl,Montana,6115.0,6115.0,8696,8800,2581.0,2000.0,1675,1675,1375,1675,Rockies
+41,loveland-basin,Loveland Basin,Colorado,10880.0,10880.0,12692,13004,1812.0,1675.0,1675,1675,1275,1675,Rockies
+42,kirkwood,Kirkwood,California,7810.0,7810.0,9460,9800,1650.0,2300.0,1650,1650,1330,1650,Pacific
+43,grand-targhee,Grand Targhee,Wyoming,7500.0,7600.0,9860,9945,2260.0,2600.0,1600,1600,1560,1600,Rockies
+44,purgatory,Purgatory,Colorado,8793.0,8793.0,10822,10822,2029.0,1600.0,1600,1600,1600,1600,Rockies
+45,kicking-horse,Kicking Horse,British Columbia,4140.0,4140.0,7928,8218,3788.0,3400.0,1575,1575,1339,1575,Western Canada
+46,discovery,Discovery,Montana,5720.0,5720.0,8158,8158,2438.0,2200.0,1560,1560,1560,1560,Rockies
+47,crested-butte,Crested Butte,Colorado,9130.0,9130.0,11880,12166,2750.0,1547.0,1547,1547,1412,2225,Rockies
+48,tamarack,Tamarack,Idaho,4940.0,4940.0,7640,7640,2700.0,1530.0,1530,1530,1530,1530,Rockies
+49,killington,Killington,Vermont,1160.0,1160.0,4150,4229,2990.0,1509.0,1509,1509,1500,2880,Northeast
+50,timberline-lodge,Timberline Lodge,Oregon,3985.0,4840.0,8500,8500,3660.0,1685.0,1500,1500,1210,1500,Pacific
+51,whitewater,Whitewater,British Columbia,4545.0,4545.0,6750,7580,2005.0,1367.0,1500,1500,1367,1500,Western Canada
+52,sierraattahoe,Sierra-at-Tahoe,California,6640.0,6640.0,8850,8850,1590.0,2000.0,1450,1450,1450,1450,Pacific
+53,kimberley,Kimberley,British Columbia,4055.0,4055.0,6240,6240,2185.0,1800.0,1450,1450,1450,1450,Western Canada
+54,arapahoe-basin,Arapahoe Basin,Colorado,10360.0,10785.0,12467,13050,1682.0,1428.0,1428,1428,1088,1428,Rockies
+55,wolf-creek,Wolf Creek,Colorado,10260.0,10260.0,11740,11879,1480.0,1600.0,1425,1425,1200,1425,Rockies
+56,alyeska,Alyeska,Alaska,280.0,280.0,2750,3940,2470.0,1610.0,1400,1400,1000,1400,Pacific
+57,sugarloaf,Sugarloaf,Maine,1393.0,1393.0,4163,4238,2770.0,1360.0,1360,1360,860,2500,Northeast
+58,49-degrees-north,49 Degrees North,Washington,3910.0,3910.0,5776,5776,1866.0,2325.0,1350,1350,1350,1350,Pacific
+59,bear-valley,Bear Valley,California,6620.0,6620.0,8488,8488,1868.0,1680.0,1300,1300,700,1300,Pacific
+60,taos,Taos,New Mexico,9350.0,9350.0,12450,12488,3100.0,1294.0,1294,1294,1025,1294,Rockies
+61,mount-spokane,Mount Spokane,Washington,3850.0,3850.0,5885,5885,2035.0,1704.0,1225,1225,1225,1225,Pacific
+62,lost-trail,Lost Trail,Montana,6425.0,6425.0,8180,8180,1755.0,1800.0,1200,1200,1200,1200,Rockies
+63,solitude,Solitude,Utah,8000.0,8000.0,10015,10489,2015.0,1200.0,1200,1200,1070,1330,Rockies
+64,sunrise-park,Sunrise Park,Arizona,9355.0,9355.0,10900,10932,1545.0,1200.0,1200,1200,1200,1350,Rockies
+65,white-pass,White Pass,Washington,4480.0,4480.0,6520,6520,2040.0,1402.0,1175,1175,1175,1175,Pacific
+66,brundage-mountain,Brundage Mountain,Idaho,5965.0,5965.0,7600,7661,1635.0,1920.0,1150,1150,1130,1150,Rockies
+67,soldier-mountain,Soldier Mountain,Idaho,5780.0,5780.0,7177,7177,1397.0,1150.0,1150,1150,950,1150,Rockies
+68,stevens-pass,Stevens Pass,Washington,3825.0,3825.0,5680,5855,1765.0,1125.0,1125,1125,1045,1125,Pacific
+69,smugglers-notch,Smugglers' Notch,Vermont,1110.0,1110.0,3650,3650,2540.0,1060.0,1060,1060,1060,1216,Northeast
+70,june,June,California,7560.0,7560.0,10130,10130,2570.0,1500.0,1060,1060,1060,1060,Pacific
+71,silver-mountain,Silver Mountain,Idaho,4160.0,4160.0,6245,6297,2085.0,1600.0,1050,1050,1020,1050,Rockies
+72,sugar-bowl,Sugar Bowl,California,6910.0,6910.0,8365,8381,1415.0,1650.0,1050,1050,900,1050,Pacific
+73,the-summit-at-snoqualmie,The Summit at Snoqualmie,Washington,2620.0,2620.0,3865,3865,1245.0,1089.0,1025,1025,1025,1025,Pacific
+74,mount-washington,Mount Washington,British Columbia,3550.0,3550.0,5150,5200,1600.0,1700.0,1025,1025,960,1025,Western Canada
+75,marmot-basin,Marmot Basin,Alberta,5640.0,5640.0,8180,8556,2540.0,1720.0,1025,1025,855,1025,Western Canada
+76,homewood,Homewood,California,6230.0,6230.0,7880,7880,1650.0,1260.0,1025,1025,955,1025,Pacific
+77,aspen-highlands,Aspen Highlands,Colorado,8090.0,8090.0,11580,12387,3490.0,1024.0,1024,1024,784,1225,Rockies
+78,mission-ridge,Mission Ridge,Washington,4585.0,4585.0,6770,6770,2185.0,2000.0,1000,1000,820,1000,Pacific
+79,red-lodge,Red Lodge,Montana,7080.0,7080.0,9390,9390,2310.0,1635.0,1000,1000,1000,1000,Rockies
+80,powderhorn,Powderhorn,Colorado,8170.0,8170.0,9830,9830,1660.0,1600.0,1000,1000,1000,1000,Rockies
+81,great-divide,Great Divide,Montana,5800.0,5800.0,7190,7334,1390.0,1500.0,975,975,945,975,Rockies
+82,apex,Apex,British Columbia,5250.0,5250.0,7142,7142,1892.0,1112.0,965,965,965,965,Western Canada
+83,montana-snowbowl,Montana Snowbowl,Montana,5000.0,5000.0,7530,7530,2530.0,950.0,950,950,950,1840,Rockies
+84,monarch,Monarch,Colorado,10695.0,10695.0,11800,11940,1105.0,1146.0,940,940,810,940,Rockies
+85,powder-king,Powder King,British Columbia,3125.0,3125.0,5010,5010,1885.0,925.0,925,925,925,1075,Western Canada
+86,brighton,Brighton,Utah,8750.0,8750.0,10460,10721,2305.0,1050.0,890,890,858,890,Rockies
+87,sunday-river,Sunday River,Maine,815.0,815.0,3130,3130,2315.0,870.0,870,870,870,2300,Northeast
+88,dodge-ridge,Dodge Ridge,California,6570.0,6570.0,8150,8150,1580.0,862.0,862,862,862,890,Pacific
+89,aspen-mountain,Aspen Mountain,Colorado,7950.0,7950.0,11260,11260,3310.0,860.0,860,860,860,1070,Rockies
+90,mount-rose,Mount Rose,Nevada,7940.0,7940.0,9565,9565,1625.0,1200.0,800,800,800,800,Pacific
+91,nakiska,Nakiska,Alberta,4915.0,4915.0,7415,7415,2505.0,1021.0,790,790,790,790,Western Canada
+92,mount-baker,Mount Baker,Washington,3630.0,3630.0,5090,5090,1460.0,1000.0,770,770,770,770,Pacific
+93,mont-tremblant,Mont Tremblant,Quebec,755.0,755.0,2863,2878,2108.0,753.0,753,753,753,2650,Eastern Canada
+94,ski-apache,Ski Apache,New Mexico,9656.0,9656.0,11400,11573,1744.0,750.0,750,750,750,750,Rockies
+95,lookout-pass,Lookout Pass,Idaho,4508.0,4508.0,6160,6160,1652.0,1023.0,740,740,740,740,Rockies
+96,sunlight,Sunlight,Colorado,7890.0,8125.0,9893,9893,1768.0,730.0,730,730,690,775,Rockies
+97,stratton,Stratton,Vermont,1990.0,1990.0,3880,3880,1890.0,670.0,670,670,670,1375,Northeast
+98,beaver-mountain,Beaver Mountain,Utah,7150.0,7150.0,8760,8760,1610.0,667.0,667,667,667,850,Rockies
+99,okemo,Okemo,Vermont,1155.0,1155.0,3320,3320,2165.0,667.0,667,667,667,1780,Northeast
+100,china-peak,China Peak,California,7030.0,7030.0,8630,8630,1600.0,1400.0,660,660,660,660,Pacific
+101,brian-head,Brian Head,Utah,9600.0,9600.0,10905,10905,1145.0,650.0,650,650,650,740,Rockies
+102,eaglecrest,Eaglecrest,Alaska,1135.0,1135.0,2595,2940,1415.0,640.0,640,640,420,690,Pacific
+103,mount-shasta,Mount Shasta,California,5465.0,5465.0,7550,7550,2085.0,635.0,635,635,635,670,Pacific
+104,arizona-snowbowl,Arizona Snowbowl,Arizona,9140.0,9140.0,11510,12000,2370.0,777.0,620,620,560,620,Rockies
+105,eagle-point,Eagle Point,Utah,9180.0,9325.0,10570,10570,1245.0,600.0,620,620,600,620,Rockies
+106,eldora,Eldora,Colorado,9250.0,9250.0,10600,10600,1350.0,680.0,615,615,615,615,Rockies
+107,blacktail-mountain,Blacktail Mountain,Montana,5240.0,5240.0,6660,6660,1420.0,1000.0,600,600,600,600,Rockies
+108,saddleback,Saddleback,Maine,2140.0,2140.0,4000,4000,1860.0,600.0,600,600,600,800,Northeast
+109,cypress-mountain,Cypress Mountain,British Columbia,2685.0,2685.0,4670,4670,1655.0,600.0,600,600,600,600,Western Canada
+110,mount-snow,Mount Snow,Vermont,1930.0,1930.0,3590,3590,1660.0,600.0,600,600,600,1200,Northeast
+111,mount-baldy,Mount Baldy,British Columbia,5650.0,5650.0,6950,6950,1300.0,600.0,600,600,600,700,Western Canada
+112,sugarbush,Sugarbush,Vermont,1500.0,1500.0,4060,4060,2560.0,581.0,581,581,581,2350,Northeast
+113,ski-santa-fe,Ski Santa Fe,New Mexico,10340.0,10340.0,12090,12090,1750.0,660.0,580,580,490,580,Rockies
+114,angel-fire,Angel Fire,New Mexico,8585.0,8585.0,10680,10794,2095.0,560.0,560,560,500,1280,Rockies
+115,willamette-pass,Willamette Pass,Oregon,5115.0,5115.0,6684,6684,1569.0,555.0,555,555,555,555,Pacific
+116,lutsen-mountains,Lutsen Mountains,Minnesota,900.0,900.0,1675,1675,775.0,1000.0,550,550,550,550,Midwest
+117,mont-sainte-anne,Mont Sainte Anne,Quebec,585.0,585.0,2642,2642,2057.0,547.0,547,547,547,1470,Eastern Canada
+118,sundance,Sundance,Utah,6100.0,6100.0,8240,8240,2140.0,540.0,540,540,540,640,Rockies
+119,ski-bluewood,Ski Bluewood,Washington,4545.0,4545.0,5670,5670,1125.0,530.0,530,530,430,530,Pacific
+120,mount-hood-skibowl,Mount Hood Skibowl,Oregon,3665.0,3665.0,5020,5070,1355.0,960.0,520,520,517,520,Pacific
+121,showdown,Showdown,Montana,6870.0,6870.0,8180,8180,1310.0,,500,500,500,500,Rockies
+122,stowe,Stowe,Vermont,1260.0,1300.0,3660,3660,2315.0,485.0,485,485,485,1475,Northeast
+123,jay-peak,Jay Peak,Vermont,1840.0,1840.0,3830,3858,1990.0,485.0,485,485,485,960,Northeast
+124,ski-cooper,Ski Cooper,Colorado,10595.0,10595.0,11740,11740,1145.0,480.0,480,480,480,520,Rockies
+125,turner-mountain,Turner Mountain,Montana,3862.0,3862.0,5956,5956,2094.0,,470,470,470,470,Rockies
+126,buttermilk,Buttermilk,Colorado,7875.0,7875.0,9875,9875,2000.0,470.0,470,470,470,880,Rockies
+127,pico,Pico,Vermont,2000.0,2000.0,3930,3930,1930.0,468.0,468,468,468,575,Northeast
+128,bretton-woods,Bretton Woods,New Hampshire,1600.0,1600.0,2990,2990,1390.0,464.0,464,464,464,780,Northeast
+129,ski-bromont,Ski Bromont,Quebec,595.0,595.0,1802,1802,1207.0,450.0,450,450,450,960,Eastern Canada
+130,mount-abram,Mount Abram,Maine,935.0,945.0,1990,1990,1045.0,450.0,430,430,390,430,Northeast
+131,gore,Gore,New York,1055.0,1055.0,3555,3555,2500.0,428.0,428,428,428,1850,Northeast
+132,black-mountain,Black Mountain,Maine,970.0,970.0,2018,2274,1048.0,600.0,425,425,255,425,Northeast
+133,pebble-creek,Pebble Creek,Idaho,6380.0,6380.0,8510,8510,2130.0,1100.0,415,415,415,415,Rockies
+134,boyne,Boyne,Michigan,,,1157,1157,,415.0,415,415,415,415,Midwest
+135,mount-baldy-ski-lifts,Mount Baldy Ski Lifts,California,6475.0,6475.0,8560,8560,2080.0,600.0,410,410,410,410,Pacific
+136,kelly-canyon,Kelly Canyon,Idaho,5810.0,5810.0,6680,6805,870.0,640.0,410,410,410,410,Rockies
+137,le-massif,Le Massif,Quebec,135.0,135.0,2600,2600,2465.0,406.0,406,406,406,1240,Eastern Canada
+138,granby-ranch,Granby Ranch,Colorado,8330.0,8330.0,9170,9170,840.0,406.0,406,406,406,450,Rockies
+139,loon,Loon,New Hampshire,855.0,855.0,3045,3045,2075.0,403.0,403,403,403,1100,Northeast
+140,hoodoo,Hoodoo,Oregon,4682.0,4682.0,5708,5708,1026.0,800.0,400,400,400,400,Pacific
+141,diamond-peak,Diamond Peak,Nevada,6730.0,6730.0,8525,8540,1795.0,655.0,400,400,390,400,Pacific
+142,mount-bohemia,Mount Bohemia,Michigan,650.0,650.0,1465,1465,815.0,585.0,400,400,400,400,Midwest
+143,ski-land,Ski Land,Alaska,1370.0,1400.0,2461,2461,1061.0,,400,400,395,400,Pacific
+144,maverick-mountain,Maverick Mountain,Montana,6845.0,6970.0,8430,8430,1460.0,,400,400,400,400,Rockies
+145,pomerelle,Pomerelle,Idaho,7715.0,7715.0,8655,8655,940.0,,390,390,390,390,Rockies
+146,the-highlands,The Highlands,Michigan,780.0,780.0,1313,1313,525.0,435.0,385,385,385,385,Midwest
+147,titus,Titus,New York,1050.0,1050.0,2000,2000,950.0,380.0,380,380,380,450,Northeast
+148,alpental,Alpental,Washington,3145.0,3145.0,5440,5522,2295.0,825.0,375,375,375,375,Pacific
+149,pine-creek,Pine Creek,Wyoming,6865.0,6865.0,8220,8220,1355.0,370.0,370,370,370,400,Rockies
+150,snow-king,Snow King,Wyoming,6235.0,6235.0,7925,8005,1690.0,500.0,365,365,365,365,Rockies
+151,red-river,Red River,New Mexico,8645.0,8645.0,10274,10274,1629.0,,365,365,365,365,Rockies
+152,blue-mountain,Blue Mountain,Ontario,758.0,758.0,1475,1475,707.0,364.0,364,364,364,690,Eastern Canada
+153,terry-peak,Terry Peak,South Dakota,5920.0,5920.0,6990,6990,1070.0,450.0,350,350,350,350,Midwest
+154,kissing-bridge,Kissing Bridge,New York,1230.0,1230.0,1770,1770,530.0,700.0,335,335,335,335,Northeast
+155,whiteface-mountain,Whiteface Mountain,New York,1220.0,1220.0,4386,4650,3166.0,334.0,334,334,299,1015,Northeast
+156,arctic-valley,Arctic Valley,Alaska,2526.0,2526.0,3930,4068,1404.0,320.0,320,320,320,375,Pacific
+157,hunter,Hunter,New York,1640.0,1640.0,3200,3200,1560.0,320.0,320,320,320,660,Northeast
+158,attitash,Attitash,New Hampshire,620.0,620.0,2285,2285,1665.0,311.0,311,311,311,790,Northeast
+159,harper-mountain,Harper Mountain,British Columbia,3530.0,3530.0,4830,4830,1300.0,400.0,300,300,300,300,Western Canada
+160,boreal,Boreal,California,7169.0,7169.0,7696,7696,527.0,380.0,300,300,300,300,Pacific
+161,bolton-valley,Bolton Valley,Vermont,1558.0,1558.0,3115,3115,1557.0,300.0,300,300,300,550,Northeast
+162,greek-peak,Greek Peak,New York,1260.0,1260.0,2089,2089,800.0,300.0,300,300,300,460,Northeast
+163,sandia-peak,Sandia Peak,New Mexico,8680.0,8680.0,10285,10285,1605.0,300.0,300,300,300,410,Rockies
+164,donner-ski-ranch,Donner Ski Ranch,California,7040.0,7040.0,7761,7761,721.0,500.0,290,290,290,290,Pacific
+165,holiday-valley,Holiday Valley,New York,1530.0,1530.0,2320,2320,726.0,290.0,290,290,290,615,Northeast
+166,granite-peak,Granite Peak,Wisconsin,1217.0,1217.0,1880,1880,663.0,400.0,290,290,290,290,Midwest
+167,cannon,Cannon,New Hampshire,1835.0,1873.0,4030,4030,2157.0,287.0,287,287,287,860,Northeast
+168,seven-springs,Seven Springs,Pennsylvania,2260.0,2260.0,2995,2995,735.0,285.0,285,285,285,440,Northeast
+169,windham,Windham,New York,1710.0,1710.0,3050,3050,1340.0,285.0,285,285,285,600,Northeast
+170,pajarito,Pajarito,New Mexico,8975.0,8975.0,10430,10450,1370.0,280.0,280,280,280,600,Rockies
+171,snowshoe,Snowshoe,West Virginia,3260.0,3260.0,4785,4785,1455.0,270.0,270,270,270,550,Northeast
+172,waterville-valley,Waterville Valley,New Hampshire,1834.0,1834.0,3850,3850,2016.0,265.0,265,265,265,490,Northeast
+173,sun-valley--dollar-mountain,Sun Valley -- Dollar Mountain,Idaho,5950.0,5950.0,6570,6570,620.0,260.0,260,260,260,260,Rockies
+174,loup-loup-ski-bowl,Loup Loup Ski Bowl,Washington,4080.0,4080.0,5300,5300,1220.0,300.0,260,260,260,260,Pacific
+175,shames,Shames,British Columbia,2328.0,2328.0,3793,3793,1465.0,252.0,252,252,252,365,Western Canada
+176,anthony-lakes,Anthony Lakes,Oregon,7130.0,7130.0,7930,7930,800.0,1000.0,250,250,250,250,Pacific
+177,white-pine,White Pine,Wyoming,8438.0,8438.0,9334,9334,896.0,370.0,250,250,250,250,Rockies
+178,snowriver--jackson-creek,Snowriver -- Jackson Creek,Michigan,1207.0,1207.0,1745,1745,538.0,250.0,250,250,250,250,Midwest
+179,snowy-range,Snowy Range,Wyoming,8770.0,8770.0,9642,9642,872.0,250.0,250,250,250,330,Rockies
+180,ragged-mountain,Ragged Mountain,New Hampshire,1125.0,1125.0,2208,2208,1083.0,250.0,250,250,250,500,Northeast
+181,labrador,Labrador,New York,1184.0,1184.0,1857,1857,673.0,,250,250,250,250,Northeast
+182,porcupine-mountains,Porcupine Mountains,Michigan,732.0,732.0,1364,1364,632.0,250.0,250,250,250,250,Midwest
+183,nubs-nob,Nub's Nob,Michigan,920.0,920.0,1328,1328,408.0,248.0,248,248,248,248,Midwest
+184,pleasant-mountain,Pleasant Mountain,Maine,515.0,515.0,1763,1763,1248.0,,245,245,245,260,Northeast
+185,big-bear-snow-summit,Big Bear -- Snow Summit,California,6970.0,6970.0,8180,8180,1210.0,240.0,240,240,240,430,Pacific
+186,whitecap-mountains,Whitecap Mountains,Wisconsin,1450.0,1450.0,1780,1780,330.0,400.0,240,240,240,240,Midwest
+187,sunapee,Sunapee,New Hampshire,1260.0,1260.0,2720,2720,1460.0,233.0,233,233,233,715,Northeast
+188,marble-mountain,Marble Mountain,Newfoundland and Labrador,52.0,52.0,1532,1532,1480.0,230.0,230,230,230,500,Eastern Canada
+189,gunstock,Gunstock,New Hampshire,930.0,930.0,2240,2240,1310.0,227.0,227,227,227,475,Northeast
+190,big-powderhorn,Big Powderhorn,Michigan,1214.0,1214.0,1634,1634,420.0,253.0,226,226,226,226,Midwest
+191,wildcat,Wildcat,New Hampshire,1930.0,1930.0,3970,3970,2040.0,225.0,225,225,225,550,Northeast
+192,grouse-mountain,Grouse Mountain,British Columbia,2840.0,2840.0,3950,3950,1110.0,212.0,212,212,212,260,Western Canada
+193,mount-ashland,Mount Ashland,Oregon,6316.0,6316.0,7470,7470,1154.0,223.0,210,210,210,210,Pacific
+194,sasquatch,Sasquatch,British Columbia,3196.0,3196.0,4303,4303,1107.0,205.0,205,205,205,390,Western Canada
+195,magic-mountain,Magic Mountain,Vermont,1370.0,1370.0,2850,2850,1480.0,205.0,205,205,205,420,Northeast
+196,mount-seymour,Mount Seymour,British Columbia,3265.0,3330.0,4100,4100,770.0,200.0,200,200,200,200,Western Canada

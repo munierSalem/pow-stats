@@ -44,42 +44,10 @@
 </head>
 <body>
   <h2>Ski Area Size vs. Public Boundary</h2>
-  <div class="filters" id="filters"></div>
-  <svg id="chart" width="900" height="600"></svg>
-  <div id="tooltip" class="tooltip"></div>
+  <div id="chart-container"></div>
 
-  <script>
-    // Region map
-    const region_map = {
-      'Colorado': 'Rockies',
-      'British Columbia': 'Western Canada',
-      'California': 'Pacific',
-      'Montana': 'Rockies',
-      'Idaho': 'Rockies',
-      'Utah': 'Rockies',
-      'Vermont': 'Northeast',
-      'Washington': 'Pacific',
-      'Oregon': 'Pacific',
-      'Wyoming': 'Rockies',
-      'New York': 'Northeast',
-      'Maine': 'Northeast',
-      'Alberta': 'Western Canada',
-      'New Mexico': 'Rockies',
-      'New Hampshire': 'Northeast',
-      'Quebec': 'Eastern Canada',
-      'Alaska': 'Pacific',
-      'Michigan': 'Midwest',
-      'Nevada': 'Pacific',
-      'Arizona': 'Rockies',
-      'Minnesota': 'Midwest',
-      'South Dakota': 'Midwest',
-      'Newfoundland and Labrador': 'Eastern Canada',
-      'Pennsylvania': 'Northeast',
-      'Wisconsin': 'Midwest',
-      'Ontario': 'Eastern Canada',
-      'West Virginia': 'Northeast',
-      'Illinois': 'Midwest'
-    };
+  <script type="module">
+    import { ScatterPlot } from './ScatterPlot.js';
 
     // Color map
     const colorMap = {
@@ -91,120 +59,37 @@
       'Western Canada': "#D50000"
     };
 
-    const svg = d3.select("#chart");
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
-    const margin = { top: 40, right: 40, bottom: 60, left: 80 };
-    const innerWidth = width - margin.left - margin.right;
-    const innerHeight = height - margin.top - margin.bottom;
-
-    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-    const tooltip = d3.select("#tooltip");
-
-    let allData, activeRegions;
-
     d3.csv("data/ski-stats.csv").then(data => {
       data.forEach(d => {
-        d.public_boundary_area = +d.public_boundary_area;
-        d.advertised_acres = +d.advertised_acres;
+        d.public_boundary_area = +d.public_boundary_area || 0;
+        d.advertised_acres = +d.advertised_acres || 0;
         d.ratio = d.public_boundary_area > 0 ? d.advertised_acres / d.public_boundary_area : 0;
-        d.region = region_map[d.state] || "Unknown";
       });
 
-      allData = data;
-      activeRegions = Array.from(new Set(data.map(d => d.region)));
-
-      // Create buttons
-      const filterDiv = d3.select("#filters");
-      activeRegions.forEach(region => {
-        console.log(region)
-        filterDiv.append("div")
-          .attr("class", "filter-btn active")
-          .style("background", colorMap[region])
-          .text(region)
-          .on("click", function() {
-            const btn = d3.select(this);
-            if (btn.classed("active")) {
-              btn.classed("active", false).style("background", "#f8f8f8").style("color", "black");
-              activeRegions = activeRegions.filter(r => r !== region);
-            } else {
-              btn.classed("active", true).style("background", colorMap[region]).style("color", "white");
-              activeRegions.push(region);
-            }
-            updatePlot();
-          });
+      const plot = new ScatterPlot({
+        containerId: "chart-container",
+        data: data,
+        xField: "public_boundary_area",
+        yField: "ratio",
+        xLabel: "Public Boundary Area",
+        yLabel: "Advertised Skiable Acres / Boundary Area",
+        breakoutField: "region",
+        pointRadius: 5,
+        tooltipArgs: {
+          text: d => `
+            <strong>${d.resort_name}</strong><br/>
+            ${d.state}, ${d.region}<br/>
+            Boundary Area: ${d.public_boundary_area}<br/>
+            Advertised Acres: ${d.advertised_acres}<br/>
+            Ratio: ${d.ratio.toFixed(2)}
+          `
+        },
+        width: 900,
+        height: 600,
+        colorMap: colorMap,
       });
 
-      // Scales
-      const x = d3.scaleLinear().range([0, innerWidth]);
-      const y = d3.scaleLinear().range([innerHeight, 0]);
-
-      const xAxis = g.append("g").attr("transform", `translate(0,${innerHeight})`);
-      const yAxis = g.append("g");
-
-      g.append("text")
-        .attr("class", "axis-label")
-        .attr("x", innerWidth / 2)
-        .attr("y", innerHeight + 45)
-        .style("text-anchor", "middle")
-        .text("Public Boundary Area");
-
-      g.append("text")
-        .attr("class", "axis-label")
-        .attr("transform", "rotate(-90)")
-        .attr("x", -innerHeight / 2)
-        .attr("y", -55)
-        .style("text-anchor", "middle")
-        .text("Advertised Skiable Acres / Boundary Area");
-
-      const impossibleLine = g.append("line")
-        .attr("stroke", "black")
-        .attr("stroke-dasharray", "4 2");
-
-      function updatePlot() {
-        const filtered = allData.filter(d => (activeRegions.includes(d.region) && d.ratio > 0));
-
-        x.domain([0, d3.max(filtered, d => d.public_boundary_area) * 1.05 || 1]);
-        y.domain([0, d3.max(filtered, d => d.ratio) * 1.05 || 1]);
-
-        xAxis.transition().duration(750).call(d3.axisBottom(x));
-        yAxis.transition().duration(750).call(d3.axisLeft(y));
-
-        impossibleLine
-          .transition().duration(750)
-          .attr("x1", 0).attr("x2", innerWidth)
-          .attr("y1", y(1)).attr("y2", y(1));
-
-        const circles = g.selectAll("circle")
-          .data(filtered, d => d.slug);
-
-        circles.enter().append("circle")
-          .attr("r", 5)
-          .attr("fill", d => colorMap[d.region] || "gray")
-          .attr("cx", d => x(d.public_boundary_area))
-          .attr("cy", d => y(d.ratio))
-          .on("mouseover", (event, d) => {
-            tooltip.transition().duration(100).style("opacity", 1);
-            tooltip.html(`
-              <strong>${d.resort_name}</strong><br/>
-              ${d.state}, ${d.region}<br/>
-              Boundary Area: ${d.public_boundary_area}<br/>
-              Advertised Acres: ${d.advertised_acres}<br/>
-              Ratio: ${d.ratio.toFixed(2)}
-            `)
-              .style("left", (event.pageX + 10) + "px")
-              .style("top", (event.pageY - 28) + "px");
-          })
-          .on("mouseout", () => tooltip.transition().duration(200).style("opacity", 0))
-          .merge(circles)
-          .transition().duration(750)
-          .attr("cx", d => x(d.public_boundary_area))
-          .attr("cy", d => y(d.ratio));
-
-        circles.exit().remove();
-      }
-
-      updatePlot();
+      plot.updatePlot();
     });
   </script>
 </body>
