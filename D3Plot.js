@@ -182,13 +182,17 @@ export class D3Plot {
     if (this.xAxisArgs.show) {
       let axisX = d3.axisBottom(this.x).ticks(this.xAxisArgs.ticks);
       if (this.xAxisArgs.tickFormat) axisX.tickFormat(this.xAxisArgs.tickFormat);
+      axisX.tickSize(-this.innerHeight);
       this.xAxis.transition().duration(750).call(axisX);
+      this.xAxis.select(".domain").remove();
     }
 
     if (this.yAxisArgs.show) {
       let axisY = d3.axisLeft(this.y).ticks(this.yAxisArgs.ticks);
       if (this.yAxisArgs.tickFormat) axisY.tickFormat(this.yAxisArgs.tickFormat);
+      axisY.tickSize(-this.innerWidth);
       this.yAxis.transition().duration(750).call(axisY);
+      this.yAxis.select(".domain").remove();
     }
 
     this.plotLogic(filteredData);

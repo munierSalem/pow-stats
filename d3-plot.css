@@ -7,9 +7,14 @@
   font-family: "Lucida Console", Monaco, monospace, courier, "courier new", sans-serif;
 }
 
+.d3-plot-container .d3-plot .tick line {
+  color: #E8E8E8;
+}
+
 .d3-plot-container .d3-plot .axis-label {
   font-size: 14px;
   font-weight: bold;
+  fill: #cc2c00;
 }
 
 .d3-plot-container .tooltip {
