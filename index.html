@@ -6,9 +6,19 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Lucida Console", Monaco, monospace, courier, "courier new", sans-serif;
       margin: 40px;
     }
+
+    #chart-container {
+      font-family: "Lucida Console", Monaco, monospace, courier, "courier new", sans-serif;
+    }
+
+    #chart-container .tick {
+      font-size: 12px;
+      font-family: "Lucida Console", Monaco, monospace, courier, "courier new", sans-serif;
+    }
+
     .axis-label {
       font-size: 14px;
       font-weight: bold;
@@ -30,7 +40,7 @@
       margin: 2px 5px;
       padding: 5px 10px;
       border-radius: 20px;
-      border: 1px solid #ccc;
+      border: none;
       cursor: pointer;
       font-size: 12px;
       font-weight: bold;
@@ -40,6 +50,16 @@
     .filter-btn.active {
       color: white;
     }
+
+    .scatter-point {
+      fill-opacity: 0.5;
+    }
+
+    .scatter-point:hover {
+      fill-opacity: 1.0;
+      stroke-width: 3px;
+    }
+
   </style>
 </head>
 <body>
@@ -52,13 +72,12 @@
     // Color map
     const colorMap = {
       'Eastern Canada': "#FF6F00",
-      'Midwest': "#00A2FF",
-      'Northeast': "#00C853",
-      'Pacific': "#FFD600",
-      'Rockies': "#AA00FF",
-      'Western Canada': "#D50000"
+      'Midwest': "#0288D1",
+      'Northeast': "#2E8B57",
+      'Pacific': "#FFC107",
+      'Rockies': "#673AB7",
+      'Western Canada': "#C62828",
     };
-
     d3.csv("data/ski-stats.csv").then(data => {
       data.forEach(d => {
         d.public_boundary_area = +d.public_boundary_area || 0;
@@ -75,6 +94,14 @@
         yLabel: "Advertised Skiable Acres / Boundary Area",
         breakoutField: "region",
         pointRadius: 5,
+        xAxisArgs: {
+          label: "Public Boundary Area",
+          tickFormat: d3.format(".2~s")
+        },
+        yAxisArgs: {
+          label: "Advertised Skiable Acres / Boundary Area",
+          tickFormat: d3.format(".0%")
+        },
         tooltipArgs: {
           text: d => `
             <strong>${d.resort_name}</strong><br/>

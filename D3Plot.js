@@ -8,6 +8,13 @@ export const TOOLTIP_DEFAULTS = {
   text: null   // function(d) => string
 };
 
+const AXIS_ARGS_DEFAULTS = {
+  show: true,
+  ticks: 5,
+  tickFormat: null,
+  label: null
+};
+
 export class D3Plot {
   constructor({
     containerId,
@@ -22,6 +29,8 @@ export class D3Plot {
     colorMap = null,
     width = 600,
     height = 400,
+    xAxisArgs = {},
+    yAxisArgs = {},
     tooltipArgs = {},
   }) {
     this.containerId = containerId;
@@ -34,8 +43,11 @@ export class D3Plot {
     this.showYAxis = showYAxis;
     this.breakoutField = breakoutField;
     this.colorMap = colorMap;
-    this.width = width,
-    this.height = height,
+    this.width = width;
+    this.height = height;
+
+    this.xAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...xAxisArgs };
+    this.yAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...yAxisArgs };
     this.tooltipConfig = { ...TOOLTIP_DEFAULTS, ...tooltipArgs };
 
     // state
@@ -85,27 +97,31 @@ export class D3Plot {
   }
 
   _initAxes() {
-    if (this.showXAxis) {
-      this.xAxis = this.g.append("g").attr("transform", `translate(0,${this.innerHeight})`);
-      if (this.xLabel) {
+    if (this.xAxisArgs.show) {
+      this.xAxis = this.g.append("g")
+        .attr("transform", `translate(0,${this.innerHeight})`);
+
+      if (this.xAxisArgs.label) {
         this.g.append("text")
           .attr("class", "axis-label")
           .attr("x", this.innerWidth / 2)
           .attr("y", this.innerHeight + 45)
           .style("text-anchor", "middle")
-          .text(this.xLabel);
+          .text(this.xAxisArgs.label);
       }
     }
-    if (this.showYAxis) {
+
+    if (this.yAxisArgs.show) {
       this.yAxis = this.g.append("g");
-      if (this.yLabel) {
+
+      if (this.yAxisArgs.label) {
         this.g.append("text")
           .attr("class", "axis-label")
           .attr("transform", "rotate(-90)")
           .attr("x", -this.innerHeight / 2)
           .attr("y", -55)
           .style("text-anchor", "middle")
-          .text(this.yLabel);
+          .text(this.yAxisArgs.label);
       }
     }
   }
@@ -172,8 +188,17 @@ export class D3Plot {
     this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
     this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
 
-    if (this.showXAxis) this.xAxis.transition().duration(750).call(d3.axisBottom(this.x));
-    if (this.showYAxis) this.yAxis.transition().duration(750).call(d3.axisLeft(this.y));
+    if (this.xAxisArgs.show) {
+      let axisX = d3.axisBottom(this.x).ticks(this.xAxisArgs.ticks);
+      if (this.xAxisArgs.tickFormat) axisX.tickFormat(this.xAxisArgs.tickFormat);
+      this.xAxis.transition().duration(750).call(axisX);
+    }
+
+    if (this.yAxisArgs.show) {
+      let axisY = d3.axisLeft(this.y).ticks(this.yAxisArgs.ticks);
+      if (this.yAxisArgs.tickFormat) axisY.tickFormat(this.yAxisArgs.tickFormat);
+      this.yAxis.transition().duration(750).call(axisY);
+    }
 
     this.plotLogic(filteredData);
   }

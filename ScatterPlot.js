@@ -11,8 +11,11 @@ export class ScatterPlot extends D3Plot {
       .data(filteredData, d => d.slug);
 
     circles.enter().append("circle")
+      .attr("class", "scatter-point")
       .attr("r", this.pointRadius)
       .attr("fill", d => this.color(d))
+      .attr("stroke", d => this.color(d))
+      .attr("stroke-width", 1.5)
       .attr("cx", d => this.x(d[this.xField]))
       .attr("cy", d => this.y(d[this.yField]))
       .call(sel => this._attachTooltip(sel))
