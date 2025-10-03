@@ -142,8 +142,7 @@ export class D3Plot {
     let filterDiv = container.select(".breakout-filters");
     if (filterDiv.empty()) {
       filterDiv = container.append("div")
-        .classed("breakout-filters", true)
-        .classed("filters", true);
+        .attr("class", "filters breakout-filters");
     }
 
     this.activeGroups.forEach(group => {
