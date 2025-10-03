@@ -108,11 +108,11 @@ export class VertPlot extends D3Plot {
         });
   }
 
-  _setRange(filteredData) {
+  _setYDomain(filteredData) {
     if(!this.dropBase) {
-      this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
+      super._setYDomain(filteredData);
     } else {
       this.y.domain([0, d3.max(filteredData, d => (d[this.yField] - d[this.yFields[0]])) * 1.05 || 1]);  
-    }    
+    }
   }
 }
