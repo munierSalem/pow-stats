@@ -192,15 +192,22 @@ export class D3Plot {
     const filteredData = this.breakoutField
       ? this.data.filter(d => this.activeGroups.includes(d[this.breakoutField]))
       : this.data;
+    this._setDomain(filteredData);
+    this._setRange(filteredData);
+    this._updateAxes();
+    this.plotLogic(filteredData);
+  }
 
+  _setDomain(filteredData) {
     if (this.isXQualitative) {
       this.x.domain(filteredData.map(d => d[this.xField]));
     } else {
       this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
     }
+  }
+
+  _setRange(filteredData) {
     this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
-    this._updateAxes();
-    this.plotLogic(filteredData);
   }
 
   _updateAxes() {

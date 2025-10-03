@@ -107,4 +107,12 @@ export class VertPlot extends D3Plot {
           this.updatePlot();
         });
   }
+
+  _setRange(filteredData) {
+    if(!this.dropBase) {
+      this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
+    } else {
+      this.y.domain([0, d3.max(filteredData, d => (d[this.yField] - d[this.yFields[0]])) * 1.05 || 1]);  
+    }    
+  }
 }
