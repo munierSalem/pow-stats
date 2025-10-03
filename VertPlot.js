@@ -22,7 +22,7 @@ export class VertPlot extends D3Plot {
       .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);
 
     // UPDATE + ENTER merge
-    groupsEnter.merge(groups)
+    const groupsMerged = groupsEnter.merge(groups)
       .transition().duration(750)
       .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);
 
@@ -32,7 +32,7 @@ export class VertPlot extends D3Plot {
       .remove();
 
     // --- Bars inside each group ---
-    groupsEnter.each((d, i, nodes) => {
+    groupsMerged.each((d, i, nodes) => {
       const g = d3.select(nodes[i]);
 
       const segments = this.yFields.slice(0, -1).map((field, i) => ({
