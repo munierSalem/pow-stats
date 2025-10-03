@@ -58,7 +58,7 @@
 
 .d3-plot-container .filter-btn:hover {
   background-color: var(--btn-color);   /* fallback for old browsers */
-  background: color-mix(in srgb, var(--btn-color) 70%, transparent);
+  background: var(--btn-color);
   color: white;
   cursor: pointer;
 }
