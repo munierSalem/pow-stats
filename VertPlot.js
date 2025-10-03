@@ -88,20 +88,13 @@ export class VertPlot extends D3Plot {
         .style("--btn-color", "#333")
         .text(d => d.label)
         .on("click", (event, d) => {
-          // Reset all buttons
           filterDiv.selectAll(".filter-btn")
             .classed("active", false)
             .classed("inactive", true);
-
-          // Activate the clicked button
           d3.select(event.currentTarget)
             .classed("active", true)
             .classed("inactive", false);
-
-          // Update dropBase
           this.dropBase = d.value;
-
-          // Re-render plot
           this.updatePlot();
         });
   }
