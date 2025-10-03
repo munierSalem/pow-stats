@@ -62,9 +62,9 @@ export class D3Plot {
   }
 
   init() {
-    this._initSvgAndGroups();
     this._initColorMap();
     if (this.breakoutField) this._initFilters();
+    this._initSvgAndGroups();
     this._initAxes();
     if (this.tooltipConfig.text) this._initTooltip();
   }
