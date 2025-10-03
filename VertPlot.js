@@ -67,16 +67,13 @@ export class VertPlot extends D3Plot {
   }
 
   _initDropToggle() {
-    const container = d3.select(`#${this.containerId}`);
-
-    // Create (or reuse) a filters div inside the container
-    let filterDiv = container.select(".drop-toggle");
+    // Create (or reuse) drop/float toggle
+    let filterDiv = this.filterContainer.select(".drop-toggle");
     if (filterDiv.empty()) {
-      filterDiv = container.append("div")
+      filterDiv = this.filterContainer.append("div")
         .attr("class", "filters drop-toggle");
     }
 
-    // Define the two toggle options
     const options = [
       { label: "Float", value: false },
       { label: "Drop", value: true }

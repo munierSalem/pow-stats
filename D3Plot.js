@@ -47,6 +47,8 @@ export class D3Plot {
     this.width = width;
     this.height = height;
     this.isXQualitative = isXQualitative;
+    this.container = null;
+    this.filterContainer = null;
 
     this.xAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...xAxisArgs };
     this.yAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...yAxisArgs };
@@ -62,8 +64,11 @@ export class D3Plot {
   }
 
   init() {
+    this.container = d3.select(`#${this.containerId}`)
+      .classed("d3-plot-container", true);
+
     this._initColorMap();
-    if (this.breakoutField) this._initBreakoutFilters();
+    this._initFilters();
     this._initSvgAndGroups();
     this._initAxes();
     if (this.tooltipConfig.text) this._initTooltip();
@@ -81,10 +86,7 @@ export class D3Plot {
   }
 
   _initSvgAndGroups() {
-    const container = d3.select(`#${this.containerId}`)
-      .classed("d3-plot-container", true);
-
-    this.svg = container.append("svg")
+    this.svg = this.container.append("svg")
       .attr("class", "d3-plot")
       .attr("width", this.width)
       .attr("height", this.height);
@@ -135,13 +137,23 @@ export class D3Plot {
     }
   }
 
-  _initBreakoutFilters() {
-    const container = d3.select(`#${this.containerId}`);
+  _initFilters() {
+    // create container for all filters
+    this.filterContainer = this.container.select(".filter-container");
+    if (this.filterContainer.empty()) {
+      this.filterContainer = this.container.append("div")
+        .attr("class", "filter-container");
+    }
 
+    // init filters as needed
+    if (this.breakoutField) this._initBreakoutFilters();
+  }
+
+  _initBreakoutFilters() {
     // Create (or reuse) a filters div inside the container
-    let filterDiv = container.select(".breakout-filters");
+    let filterDiv = this.filterContainer.select(".breakout-filters");
     if (filterDiv.empty()) {
-      filterDiv = container.append("div")
+      filterDiv = this.filterContainer.append("div")
         .attr("class", "filters breakout-filters");
     }
 
@@ -166,10 +178,9 @@ export class D3Plot {
 
   _initTooltip() {
     // inject tooltip div if not present
-    const container = d3.select(`#${this.containerId}`);
-    let tt = container.select(".tooltip");
+    let tt = this.container.select(".tooltip");
     if (tt.empty()) {
-      tt = container.append("div")
+      tt = this.container.append("div")
         .attr("class", "tooltip")
         .style("opacity", 0)
         .style("position", "absolute");
