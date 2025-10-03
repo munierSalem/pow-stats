@@ -54,11 +54,11 @@
         },
         tooltipArgs: {
           text: d => `
-            <strong>${d.resort_name}</strong><br/>
-            ${d.state}, ${d.region}<br/>
-            Boundary Area: ${d.public_boundary_area}<br/>
-            Advertised Acres: ${d.advertised_acres}<br/>
-            Ratio: ${d.ratio.toFixed(2)}
+            <h3>${d.resort_name}</h3>
+            <strong>${d.state}</strong>, ${d.region}<br/>
+            <strong>Boundary Area:</strong> ${d.public_boundary_area}<br/>
+            <strong>Advertised Acres:</strong> ${d.advertised_acres}<br/>
+            <strong>Ratio:</strong> ${d.ratio.toFixed(2)}
           `
         },
         width: 900,

@@ -25,7 +25,16 @@
   font-size: 12px;
   pointer-events: none;
   opacity: 0;
+  font-weight: normal;
 }
+
+.d3-plot-container .tooltip h3 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  color: #cc2c00;
+}
+
 .d3-plot-container .filters {
   margin-bottom: 10px;
   display: flex;
