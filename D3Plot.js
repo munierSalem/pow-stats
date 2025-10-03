@@ -188,7 +188,6 @@ export class D3Plot {
       this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
     }
     this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
-    console.log(d3.max(filteredData, d => d[this.yField]));
     this._updateAxes();
     this.plotLogic(filteredData);
   }
