@@ -11,27 +11,22 @@ export class VertPlot extends D3Plot {
   }
 
   plotLogic(data) {
-    console.log("here!");
     const groups = this.g.selectAll(".bar-group")
       .data(data, d => d.slug);
 
-    // ENTER groups
+    const exitGroups = groups.exit().remove();
+    const exitDelay = 0;
+
     const groupsEnter = groups.enter()
       .append("g")
       .attr("class", "bar-group")
       .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);
 
-    // UPDATE + ENTER merge
     const groupsMerged = groupsEnter.merge(groups)
-      .transition().duration(750)
-      .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);
+      .transition().delay(exitDelay).duration(750)
+      .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);    
+    const transitionDelay = groupsMerged.size() - groupsEnter.size() > 0 ? 750 : 0;
 
-    // EXIT groups
-    groups.exit()
-      .transition().duration(500)
-      .remove();
-
-    // --- Bars inside each group ---
     groupsMerged.each((d, i, nodes) => {
       const g = d3.select(nodes[i]);
 
@@ -44,29 +39,25 @@ export class VertPlot extends D3Plot {
 
       const bars = g.selectAll("rect").data(segments);
 
-      console.log(this.x.bandwidth());
+      bars.exit().remove();
 
-      // ENTER rects
+      bars.transition().delay(exitDelay).duration(transitionDelay)
+        .attr("fill", seg => this.color(seg.d))
+        .attr("x", 0)
+        .attr("width", this.x.bandwidth())
+        .attr("y", seg => this.y(seg.y1))
+        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1));
+
       bars.enter().append("rect")
         .attr("class", seg => `bar ${seg.cls}`)
         .attr("fill", seg => this.color(seg.d))
         .attr("x", 0)
-        .attr("width", this.x.bandwidth())
+        .attr("width", 0)
         .attr("y", seg => this.y(seg.y1))
-        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1));
-
-      // UPDATE rects
-      bars.transition().duration(750)
-        .attr("fill", seg => this.color(seg.d))
-        .attr("x", 0)
+        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1))
+        .transition().delay(exitDelay + transitionDelay).duration(400)
         .attr("width", this.x.bandwidth())
-        .attr("y", seg => this.y(seg.y1))
-        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1));
 
-      // EXIT rects
-      bars.exit()
-        .transition().duration(500)
-        .remove();
     });
   }
 }
