@@ -48,7 +48,7 @@ export class VertPlot extends D3Plot {
         .attr("x", 0)
         .attr("width", this.x.bandwidth())
         .attr("y", seg => this.y(seg.y1))
-        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1));
+        .attr("height", seg => Math.max(this.y(seg.y0) - this.y(seg.y1), 0))
 
       bars.enter().append("rect")
         .attr("class", seg => `bar ${seg.cls}`)
@@ -56,7 +56,7 @@ export class VertPlot extends D3Plot {
         .attr("x", 0)
         .attr("width", 0)
         .attr("y", seg => this.y(seg.y1))
-        .attr("height", seg => this.y(seg.y0) - this.y(seg.y1))
+        .attr("height", seg => Math.max(this.y(seg.y0) - this.y(seg.y1), 0))
         .transition().delay(exitDelay + transitionDelay).duration(400)
         .attr("width", this.x.bandwidth())
 
