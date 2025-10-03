@@ -15,6 +15,8 @@
 <body>
   <h2>Ski Area Size vs. Public Boundary</h2>
   <div id="vert-size-chart"></div>
+
+  <h2>Altitude / Vertical Drop</h2>
   <div id="vert-chart"></div>
 
   <script type="module">
@@ -96,10 +98,11 @@
           <h3>${d.resort_name}</h3>
           Vertical: ${d.peak_elevation - d.base_elevation} ft<br/>
           Lift-served Vert: ${d.peak_public_lift_elevation - d.base_public_lift_elevation} ft
-        `,
-        xOffset: 10,
-        yOffset: 0,
-      }
+        `
+      },
+      xAxisArgs: {
+        show: false,
+      },
     });
     vertPlot.updatePlot();
 
