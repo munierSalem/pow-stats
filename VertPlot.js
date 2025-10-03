@@ -8,6 +8,7 @@ export class VertPlot extends D3Plot {
     super(args);
 
     this.yFields = args.yFields;
+    this.dropBase = false;
   }
 
   plotLogic(data) {
@@ -34,8 +35,8 @@ export class VertPlot extends D3Plot {
 
       const segments = this.yFields.slice(0, -1).map((field, i) => ({
         d: d,
-        y0: +d[field],
-        y1: +d[this.yFields[i + 1]],
+        y0: +d[field] - (this.dropBase ? +d[this.yFields[0]] : 0),
+        y1: +d[this.yFields[i + 1]] - (this.dropBase ? +d[this.yFields[0]] : 0),
         cls: field.replace(/_/g, "-")
       }));
 

@@ -63,7 +63,7 @@ export class D3Plot {
 
   init() {
     this._initColorMap();
-    if (this.breakoutField) this._initFilters();
+    if (this.breakoutField) this._initBreakoutFilters();
     this._initSvgAndGroups();
     this._initAxes();
     if (this.tooltipConfig.text) this._initTooltip();
@@ -135,14 +135,15 @@ export class D3Plot {
     }
   }
 
-  _initFilters() {
+  _initBreakoutFilters() {
     const container = d3.select(`#${this.containerId}`);
 
     // Create (or reuse) a filters div inside the container
-    let filterDiv = container.select(".filters");
+    let filterDiv = container.select(".breakout-filters");
     if (filterDiv.empty()) {
       filterDiv = container.append("div")
-        .attr("class", "filters");
+        .classed("breakout-filters", true)
+        .classed("filters", true);
     }
 
     this.activeGroups.forEach(group => {
