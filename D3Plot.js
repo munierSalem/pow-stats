@@ -231,8 +231,8 @@ export class D3Plot {
         const bounds = d3.select(`#${this.containerId}`).node().getBoundingClientRect();
         this.tooltip.transition().duration(this.tooltipConfig.inDuration).style("opacity", 1);
         this.tooltip.html(this.tooltipConfig.text(d))
-          .style("left", (event.pageX - bounds.left + this.tooltipConfig.xOffset) + "px")
-          .style("top", (event.pageY - bounds.top + this.tooltipConfig.yOffset) + "px");
+          .style("left", (event.pageX + this.tooltipConfig.xOffset) + "px")
+          .style("top", (event.pageY + this.tooltipConfig.yOffset) + "px");
       })
       .on("mouseout", () => {
         this.tooltip.transition().duration(this.tooltipConfig.outDuration).style("opacity", 0);

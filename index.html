@@ -91,7 +91,15 @@
       height: 600,
       breakoutField: "region",
       colorMap: colorMap,
-
+      tooltipArgs: {
+        text: d => `
+          <h3>${d.resort_name}</h3>
+          Vertical: ${d.peak_elevation - d.base_elevation} ft<br/>
+          Lift-served Vert: ${d.peak_public_lift_elevation - d.base_public_lift_elevation} ft
+        `,
+        xOffset: 10,
+        yOffset: 0,
+      }
     });
     vertPlot.updatePlot();
 

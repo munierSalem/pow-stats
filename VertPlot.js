@@ -23,6 +23,7 @@ export class VertPlot extends D3Plot {
       .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);
 
     const groupsMerged = groupsEnter.merge(groups)
+      .call(sel => this._attachTooltip(sel))
       .transition().delay(exitDelay).duration(750)
       .attr("transform", d => `translate(${this.x(d[this.xField])},0)`);    
     const transitionDelay = groupsMerged.size() - groupsEnter.size() > 0 ? 750 : 0;
