@@ -79,9 +79,8 @@
     const sampleData = [...data]  // spread so we don’t mutate the original
       .sort((a, b) => d3.descending(+a.peak_elevation, +b.peak_elevation))
       .filter((element, index) => {
-        return index % 4 === 0;
-      })
-      .slice(0, 20);
+        return index % 2 === 0;
+      });
 
     const vertPlot = new VertPlot({
       containerId: "vert-chart",

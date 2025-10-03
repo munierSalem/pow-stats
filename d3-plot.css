@@ -91,3 +91,11 @@
 .d3-plot-container .d3-plot .bar.base-public-lift-elevation { opacity: 1.0; }
 .d3-plot-container .d3-plot .bar.peak-public-lift-elevation { opacity: 0.4; }
 
+.d3-plot-container .d3-plot.focused .bar.base-elevation { opacity: 0.2; }
+.d3-plot-container .d3-plot.focused .bar.base-public-lift-elevation { opacity: 0.5; }
+.d3-plot-container .d3-plot.focused .bar.peak-public-lift-elevation { opacity: 0.2; }
+
+.d3-plot-container .d3-plot.focused .focused .bar.base-elevation { opacity: 0.4; }
+.d3-plot-container .d3-plot.focused .focused .bar.base-public-lift-elevation { opacity: 1.0; }
+.d3-plot-container .d3-plot.focused .focused .bar.peak-public-lift-elevation { opacity: 0.4; }
+

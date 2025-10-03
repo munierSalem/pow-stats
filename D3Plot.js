@@ -62,9 +62,9 @@ export class D3Plot {
   }
 
   init() {
+    this._initSvgAndGroups();
     this._initColorMap();
     if (this.breakoutField) this._initFilters();
-    this._initSvgAndGroups();
     this._initAxes();
     if (this.tooltipConfig.text) this._initTooltip();
   }
@@ -236,6 +236,21 @@ export class D3Plot {
       })
       .on("mouseout", () => {
         this.tooltip.transition().duration(this.tooltipConfig.outDuration).style("opacity", 0);
+      });
+
+    return selection;
+  }
+
+  _attachHover(selection) {
+    const self = this;
+    selection
+      .on("mouseover.hover", function(event, d) {
+        d3.select(this).classed("focused", true);
+        self.svg.classed("focused", true);
+      })
+      .on("mouseout.hover", function(event, d) {
+        d3.select(this).classed("focused", false);
+        self.svg.classed("focused", false);
       });
 
     return selection;
