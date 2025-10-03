@@ -9,6 +9,8 @@ export class VertPlot extends D3Plot {
 
     this.yFields = args.yFields;
     this.dropBase = false;
+
+    this._initDropToggle();
   }
 
   plotLogic(data) {
@@ -62,5 +64,48 @@ export class VertPlot extends D3Plot {
         .attr("width", this.x.bandwidth())
 
     });
+  }
+
+  _initDropToggle() {
+    const container = d3.select(`#${this.containerId}`);
+
+    // Create (or reuse) a filters div inside the container
+    let filterDiv = container.select(".drop-toggle");
+    if (filterDiv.empty()) {
+      filterDiv = container.append("div")
+        .attr("class", "filters drop-toggle");
+    }
+
+    // Define the two toggle options
+    const options = [
+      { label: "Float", value: false },
+      { label: "Drop", value: true }
+    ];
+
+    // Render buttons
+    const buttons = filterDiv.selectAll(".filter-btn")
+      .data(options)
+      .join("div")
+        .attr("class", d =>
+          "filter-btn" + (this.dropBase === d.value ? " active" : " inactive"))
+        .style("--btn-color", "#333")
+        .text(d => d.label)
+        .on("click", (event, d) => {
+          // Reset all buttons
+          filterDiv.selectAll(".filter-btn")
+            .classed("active", false)
+            .classed("inactive", true);
+
+          // Activate the clicked button
+          d3.select(event.currentTarget)
+            .classed("active", true)
+            .classed("inactive", false);
+
+          // Update dropBase
+          this.dropBase = d.value;
+
+          // Re-render plot
+          this.updatePlot();
+        });
   }
 }
