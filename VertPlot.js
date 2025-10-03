@@ -1,10 +1,10 @@
 import { D3Plot } from './D3Plot.js';
 
-const DROP_TOGGLE_DEFAULTS = {
+const DROP_TOGGLE_DEFAULTS = Object.freeze({
   show: false,
   floatLabel: "Float",
   dropLabel: "Drop",
-};
+});
 
 export class VertPlot extends D3Plot {
   constructor(args) {

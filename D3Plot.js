@@ -1,19 +1,19 @@
-export const COLOR_LIST = ["#FF6F00", "#00A2FF", "#00C853", "#FFD600", "#AA00FF", "#D50000"];
+export const COLOR_LIST = Object.freeze(["#FF6F00", "#00A2FF", "#00C853", "#FFD600", "#AA00FF", "#D50000"]);
 
-export const TOOLTIP_DEFAULTS = {
+export const TOOLTIP_DEFAULTS = Object.freeze({
   xOffset: 10,
   yOffset: -28,
   inDuration: 100,
   outDuration: 200,
   text: null   // function(d) => string
-};
+});
 
-const AXIS_ARGS_DEFAULTS = {
+const AXIS_ARGS_DEFAULTS = Object.freeze({
   show: true,
   ticks: 5,
   tickFormat: null,
   label: null
-};
+});
 
 export class D3Plot {
   constructor({
