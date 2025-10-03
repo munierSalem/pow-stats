@@ -1,5 +1,11 @@
 import { D3Plot } from './D3Plot.js';
 
+const DROP_TOGGLE_DEFAULTS = {
+  show: false,
+  floatLabel: "Float",
+  dropLabel: "Drop",
+};
+
 export class VertPlot extends D3Plot {
   constructor(args) {
     // grab yFields array, set yField = max field for scaling
@@ -10,7 +16,10 @@ export class VertPlot extends D3Plot {
     this.yFields = args.yFields;
     this.dropBase = false;
 
-    this._initDropToggle();
+    // optionally include toggle to float/drop bars
+    const dropToggleArgs = args.dropToggleArgs || {};
+    this.dropToggleArgs = { ...DROP_TOGGLE_DEFAULTS, ...dropToggleArgs };
+    if (this.dropToggleArgs.show) this._initDropToggle();
   }
 
   plotLogic(data) {
@@ -75,8 +84,8 @@ export class VertPlot extends D3Plot {
     }
 
     const options = [
-      { label: "Float", value: false },
-      { label: "Drop", value: true }
+      { label: this.dropToggleArgs.floatLabel, value: false },
+      { label: this.dropToggleArgs.dropLabel, value: true }
     ];
 
     // Render buttons
