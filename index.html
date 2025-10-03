@@ -8,102 +8,113 @@
   <style>
     body {
       font-family: "Lucida Console", Monaco, monospace, courier, "courier new", sans-serif;
-      margin: 40px;
+      margin: 0;
+      padding: 0;
+      background-color: #EFEFEF;
+    }
+
+    .contents {
+      width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
     }
   </style>
 </head>
 <body>
-  <h2>Ski Area Size vs. Public Boundary</h2>
-  <div id="vert-size-chart"></div>
+  <div class="contents">
+    <h2>Ski Area Size vs. Public Boundary</h2>
+    <div id="vert-size-chart"></div>
+    <hr/>
+    <h2>Altitude / Vertical Drop</h2>
+    <div id="vert-chart"></div>
 
-  <h2>Altitude / Vertical Drop</h2>
-  <div id="vert-chart"></div>
+    <script type="module">
+      import { ScatterPlot } from './ScatterPlot.js';
+      import { VertPlot } from './VertPlot.js';
 
-  <script type="module">
-    import { ScatterPlot } from './ScatterPlot.js';
-    import { VertPlot } from './VertPlot.js';
+      // Color map
+      const colorMap = {
+        'Eastern Canada': "#FF6F00",
+        'Midwest': "#0288D1",
+        'Northeast': "#2E8B57",
+        'Pacific': "#FFC107",
+        'Rockies': "#673AB7",
+        'Western Canada': "#C62828",
+      };
+      d3.csv("data/ski-stats.csv").then(data => {
+        data.forEach(d => {
+          d.public_boundary_area = +d.public_boundary_area || 0;
+          d.advertised_acres = +d.advertised_acres || 0;
+          d.ratio = d.public_boundary_area > 0 ? d.advertised_acres / d.public_boundary_area : 0;
+          d.base_elevation = + d.base_elevation || 0 ;
+          d.base_public_lift_elevation = + d.base_public_lift_elevation || 0 ;
+          d.peak_public_lift_elevation = + d.peak_public_lift_elevation || 0 ;
+          d.peak_elevation = + d.peak_elevation || 0 ;
+        });
 
-    // Color map
-    const colorMap = {
-      'Eastern Canada': "#FF6F00",
-      'Midwest': "#0288D1",
-      'Northeast': "#2E8B57",
-      'Pacific': "#FFC107",
-      'Rockies': "#673AB7",
-      'Western Canada': "#C62828",
-    };
-    d3.csv("data/ski-stats.csv").then(data => {
-      data.forEach(d => {
-        d.public_boundary_area = +d.public_boundary_area || 0;
-        d.advertised_acres = +d.advertised_acres || 0;
-        d.ratio = d.public_boundary_area > 0 ? d.advertised_acres / d.public_boundary_area : 0;
-        d.base_elevation = + d.base_elevation || 0 ;
-        d.base_public_lift_elevation = + d.base_public_lift_elevation || 0 ;
-        d.peak_public_lift_elevation = + d.peak_public_lift_elevation || 0 ;
-        d.peak_elevation = + d.peak_elevation || 0 ;
-      });
+        const plot = new ScatterPlot({
+          containerId: "vert-size-chart",
+          data: data,
+          xField: "public_boundary_area",
+          yField: "ratio",
+          xLabel: "Public Boundary Area",
+          yLabel: "Advertised Skiable Acres / Boundary Area",
+          breakoutField: "region",
+          pointRadius: 7,
+          xAxisArgs: {
+            label: "Public Boundary Area",
+            tickFormat: d3.format(".2~s")
+          },
+          yAxisArgs: {
+            label: "Advertised Skiable Acres / Boundary Area",
+            tickFormat: d3.format(".0%")
+          },
+          tooltipArgs: {
+            text: d => `
+              <h3>${d.resort_name}</h3>
+              <strong>${d.state}</strong>, ${d.region}<br/>
+              <strong>Boundary Area:</strong> ${d.public_boundary_area}<br/>
+              <strong>Advertised Acres:</strong> ${d.advertised_acres}<br/>
+              <strong>Ratio:</strong> ${d.ratio.toFixed(2)}
+            `
+          },
+          width: 900,
+          height: 600,
+          colorMap: colorMap,
+        });
 
-      const plot = new ScatterPlot({
-        containerId: "vert-size-chart",
-        data: data,
-        xField: "public_boundary_area",
-        yField: "ratio",
-        xLabel: "Public Boundary Area",
-        yLabel: "Advertised Skiable Acres / Boundary Area",
+        plot.updatePlot();
+
+      const sampleData = [...data]
+        .sort((a, b) => d3.descending(+a.peak_public_lift_elevation, +b.peak_public_lift_elevation));
+
+      const vertPlot = new VertPlot({
+        containerId: "vert-chart",
+        data: sampleData,
+        xField: "resort_name",
+        yFields: ["base_elevation","base_public_lift_elevation","peak_public_lift_elevation","peak_elevation"],
+        isXQualitative: true,
+        width: 900,
+        height: 600,
         breakoutField: "region",
-        pointRadius: 7,
-        xAxisArgs: {
-          label: "Public Boundary Area",
-          tickFormat: d3.format(".2~s")
-        },
-        yAxisArgs: {
-          label: "Advertised Skiable Acres / Boundary Area",
-          tickFormat: d3.format(".0%")
-        },
+        colorMap: colorMap,
         tooltipArgs: {
           text: d => `
             <h3>${d.resort_name}</h3>
-            <strong>${d.state}</strong>, ${d.region}<br/>
-            <strong>Boundary Area:</strong> ${d.public_boundary_area}<br/>
-            <strong>Advertised Acres:</strong> ${d.advertised_acres}<br/>
-            <strong>Ratio:</strong> ${d.ratio.toFixed(2)}
+            Vertical: ${d.peak_elevation - d.base_elevation} ft<br/>
+            Lift-served Vert: ${d.peak_public_lift_elevation - d.base_public_lift_elevation} ft
           `
         },
-        width: 900,
-        height: 600,
-        colorMap: colorMap,
+        xAxisArgs: {
+          show: false,
+        },
       });
-
-      plot.updatePlot();
-
-    const sampleData = [...data]
-      .sort((a, b) => d3.descending(+a.peak_public_lift_elevation, +b.peak_public_lift_elevation));
-
-    const vertPlot = new VertPlot({
-      containerId: "vert-chart",
-      data: sampleData,
-      xField: "resort_name",
-      yFields: ["base_elevation","base_public_lift_elevation","peak_public_lift_elevation","peak_elevation"],
-      isXQualitative: true,
-      width: 900,
-      height: 600,
-      breakoutField: "region",
-      colorMap: colorMap,
-      tooltipArgs: {
-        text: d => `
-          <h3>${d.resort_name}</h3>
-          Vertical: ${d.peak_elevation - d.base_elevation} ft<br/>
-          Lift-served Vert: ${d.peak_public_lift_elevation - d.base_public_lift_elevation} ft
-        `
-      },
-      xAxisArgs: {
-        show: false,
-      },
-    });
-    vertPlot.updatePlot();
+      vertPlot.updatePlot();
 
 
-    });
-  </script>
+      });
+    </script>
+  </div>
 </body>
 </html>
