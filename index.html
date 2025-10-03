@@ -76,8 +76,8 @@
 
       plot.updatePlot();
 
-    const sampleData = [...data]  // spread so we don’t mutate the original
-      .sort((a, b) => d3.descending(+a.peak_elevation, +b.peak_elevation));
+    const sampleData = [...data]
+      .sort((a, b) => d3.descending(+a.peak_public_lift_elevation, +b.peak_public_lift_elevation));
 
     const vertPlot = new VertPlot({
       containerId: "vert-chart",
