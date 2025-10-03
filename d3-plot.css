@@ -81,3 +81,13 @@
   fill-opacity: 1.0;
   stroke-width: 3px;
 }
+
+
+.d3-plot-container .d3-plot .bar {
+  stroke: none;
+}
+
+.d3-plot-container .d3-plot .bar.base-elevation { opacity: 0.4; }
+.d3-plot-container .d3-plot .bar.base-public-lift-elevation { opacity: 1.0; }
+.d3-plot-container .d3-plot .bar.peak-public-lift-elevation { opacity: 0.4; }
+

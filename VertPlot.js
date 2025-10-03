@@ -1,4 +1,6 @@
-class VertPlot extends D3Plot {
+import { D3Plot } from './D3Plot.js';
+
+export class VertPlot extends D3Plot {
   constructor(args) {
     // grab yFields array, set yField = max field for scaling
     args.yFields = args.yFields || [];
@@ -6,21 +8,6 @@ class VertPlot extends D3Plot {
     super(args);
 
     this.yFields = args.yFields;
-    // override x to be band scale
-    this.x = d3.scaleBand()
-      .range([0, this.innerWidth])
-      .padding(0.2);
-  }
-
-  updatePlot() {
-    // use resort names for domain
-    this.x.domain(this.data.map(d => d[this.xField]));
-    this.y.domain([0, d3.max(this.data, d => +d[this.yField]) * 1.05]);
-
-    if (this.showXAxis) this.xAxis.call(d3.axisBottom(this.x).tickFormat(d => d));
-    if (this.showYAxis) this.yAxis.call(d3.axisLeft(this.y));
-
-    this.plotLogic(this.data);
   }
 
   plotLogic(data) {
@@ -37,6 +24,7 @@ class VertPlot extends D3Plot {
       const g = d3.select(nodes[i]);
 
       const segments = this.yFields.slice(0, -1).map((field, i) => ({
+        d: d,
         y0: +d[field],
         y1: +d[this.yFields[i + 1]],
         cls: field.replace(/_/g, "-")
@@ -46,6 +34,7 @@ class VertPlot extends D3Plot {
         if (seg.y1 > seg.y0) {
           g.append("rect")
             .attr("class", `bar ${seg.cls}`)
+            .attr("fill", d => this.color(seg.d))
             .attr("x", 0)
             .attr("width", this.x.bandwidth())
             .attr("y", this.y(seg.y1))

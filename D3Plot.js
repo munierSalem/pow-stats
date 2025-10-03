@@ -32,6 +32,7 @@ export class D3Plot {
     xAxisArgs = {},
     yAxisArgs = {},
     tooltipArgs = {},
+    isXQualitative = false,
   }) {
     this.containerId = containerId;
     this.data = data;
@@ -45,6 +46,7 @@ export class D3Plot {
     this.colorMap = colorMap;
     this.width = width;
     this.height = height;
+    this.isXQualitative = isXQualitative;
 
     this.xAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...xAxisArgs };
     this.yAxisArgs = { ...AXIS_ARGS_DEFAULTS, ...yAxisArgs };
@@ -95,7 +97,11 @@ export class D3Plot {
       .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
 
     // scales
-    this.x = d3.scaleLinear().range([0, this.innerWidth]);
+    if (this.isXQualitative) {
+      this.x = d3.scaleBand().range([0, this.innerWidth]).padding(0.2);
+    } else {
+      this.x = d3.scaleLinear().range([0, this.innerWidth]);
+    }
     this.y = d3.scaleLinear().range([this.innerHeight, 0]);
   }
 
@@ -176,8 +182,13 @@ export class D3Plot {
       ? this.data.filter(d => this.activeGroups.includes(d[this.breakoutField]))
       : this.data;
 
-    this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
+    if (this.isXQualitative) {
+      this.x.domain(filteredData.map(d => d[this.xField]));
+    } else {
+      this.x.domain([0, d3.max(filteredData, d => d[this.xField]) * 1.05 || 1]);
+    }
     this.y.domain([0, d3.max(filteredData, d => d[this.yField]) * 1.05 || 1]);
+    console.log(d3.max(filteredData, d => d[this.yField]));
     this._updateAxes();
     this.plotLogic(filteredData);
   }

@@ -14,10 +14,12 @@
 </head>
 <body>
   <h2>Ski Area Size vs. Public Boundary</h2>
-  <div id="chart-container"></div>
+  <div id="vert-size-chart"></div>
+  <div id="vert-chart"></div>
 
   <script type="module">
     import { ScatterPlot } from './ScatterPlot.js';
+    import { VertPlot } from './VertPlot.js';
 
     // Color map
     const colorMap = {
@@ -33,10 +35,14 @@
         d.public_boundary_area = +d.public_boundary_area || 0;
         d.advertised_acres = +d.advertised_acres || 0;
         d.ratio = d.public_boundary_area > 0 ? d.advertised_acres / d.public_boundary_area : 0;
+        d.base_elevation = + d.base_elevation || 0 ;
+        d.base_public_lift_elevation = + d.base_public_lift_elevation || 0 ;
+        d.peak_public_lift_elevation = + d.peak_public_lift_elevation || 0 ;
+        d.peak_elevation = + d.peak_elevation || 0 ;
       });
 
       const plot = new ScatterPlot({
-        containerId: "chart-container",
+        containerId: "vert-size-chart",
         data: data,
         xField: "public_boundary_area",
         yField: "ratio",
@@ -67,6 +73,29 @@
       });
 
       plot.updatePlot();
+
+    const sampleData = [...data]  // spread so we don’t mutate the original
+      .sort((a, b) => d3.descending(+a.peak_elevation, +b.peak_elevation))
+      .filter((element, index) => {
+        return index % 4 === 0;
+      })
+      .slice(0, 20);
+
+    const vertPlot = new VertPlot({
+      containerId: "vert-chart",
+      data: sampleData,
+      xField: "resort_name",
+      yFields: ["base_elevation","base_public_lift_elevation","peak_public_lift_elevation","peak_elevation"],
+      isXQualitative: true,
+      width: 900,
+      height: 600,
+      breakoutField: "region",
+      colorMap: colorMap,
+
+    });
+    vertPlot.updatePlot();
+
+
     });
   </script>
 </body>
